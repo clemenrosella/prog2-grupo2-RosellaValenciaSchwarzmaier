@@ -5,7 +5,7 @@ const productController = {
     product: function(req,res){
         let id = req.params.id;
 
-        let productos = modulDatos.productos;
+        let productos = moduloDatos.productos;
         let productoEncontrado= {};
 
         for (let i = 0; i< productos.length; i++){
