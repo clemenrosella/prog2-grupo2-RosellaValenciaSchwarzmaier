@@ -8,13 +8,26 @@ const userController = {
         return res.render('register');
     },
     miPerfil: function(req, res) {
-        let usuarios = moduloDatos.usuarios;
-        let miUsuario = usuarios[0]; 
+        let id = req.params.id;
+        let usuario = {};
 
-        return res.render('profile', { usuario: miUsuario });
+        for (let i = 0; i < moduloDatos.usuarios.length; i++){
+            if (moduloDatos.usuarios[i].id == id){
+                usuario = moduloDatos.usuarios[i]
+            }
+        }
+        let publicaciones = [];
+        for (let i = 0; i < moduloDatos.productos.length; i++){
+            if (moduloDatos.productos[i].idUsuario == id){
+                publicaciones.push(moduloDatos.productos[i])
+            }
+        }
+    
+
+        return res.render('miPerfil', { usuario: usuario, publicaciones: publicaciones });
     },
     editarMiPerfil: function(req, res) {
-        return res.render('profile-edit');
+        return res.render('editarMiPerfil');
     },
 };
 
