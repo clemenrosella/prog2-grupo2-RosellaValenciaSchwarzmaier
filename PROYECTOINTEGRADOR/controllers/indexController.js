@@ -2,7 +2,10 @@ const moduloDatos = require('../db/index');
 
 const indexController = {
     home: function (req, res) {
-        res.render('index', {/*un objeto litera; con la info*/});
+        
+        let productos = moduloDatos.productos;
+        
+        res.render('index', { novedades: productos, masComentados: productos });
     }
 };
 
