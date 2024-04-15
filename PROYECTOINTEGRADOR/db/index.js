@@ -2,9 +2,34 @@ const moduloDatos = {
     productos: [
         {
             id: 1,
-            nombre: "Cafetera Moulineex",
-            descripcion: "Este es nuestro primer post",
-            imagen: "./images/products/img-cafetera-moulinex.jpg",
+            nombre: "Secador de pelo Remington Thermacare D12A negro 220V",
+            descripcion: "Lo que tienes que saber de este producto: Si hay algo que no puede faltar en tu baño es un secador de pelo Remington Thermacare. En ondas, rulos, lacio, usalo como más te guste. Este producto se encargará de cuidar la salud de tu cabello y de crear el look perfecto para cada ocasión. Es pequeño, liviano y viene a completar tu set de belleza en el hogar",
+            imagen: "./images/products/secadorpelo.webp",
+            idUsuario: 1,
+            comentarios: [
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Muy buen secador. Liviano. El sopleteo justo para tu peluquín. La temperatura tbn ideal."
+
+                },
+                {
+                    id: 2,
+                    idUsuario: 2,
+                    texto: "Mi hija quedó feliz 😄 💕 😊."
+                },
+                {
+                    id: 3,
+                    idUsuario: 3,
+                    texto: "Muy buen producto!! funciona de diez, yo en lo personal lo primero que hago antes de comprar algo, es revisar los malos comentarios de cada producto y vi que este tenía pocos malos comentarios y le encare nomas , gracias a dios todo joya!! funciona de 10!!."
+                }
+            ]
+        },
+        {
+            id: 2,
+            nombre: "Rizadora de Barril GAMA",
+            descripcion: "25 mm de diametro color negro/rojo 110V/220V",
+            imagen:"./images/products/BUCLERA.png",
             idUsuario: 1,
             comentarios: [
                 {
@@ -12,19 +37,16 @@ const moduloDatos = {
                     idUsuario: 1,
                     texto: "Mi primer comentario"
 
-                }
-            ]
-        },
-        {
-            id: 2,
-            nombre: "MacBook Pro",
-            descripcion: "Este es nuestro segundo post",
-            imagen:"./images/products/img-macbook-pro-2019.jpg",
-            idUsuario: 1,
-            comentarios: [
+                },
                 {
-                    id: 1,
-                    idUsuario: 1,
+                    id: 2,
+                    idUsuario: 2,
+                    texto: "Mi primer comentario"
+
+                },
+                {
+                    id: 3,
+                    idUsuario: 3,
                     texto: "Mi primer comentario"
 
                 }
@@ -32,9 +54,9 @@ const moduloDatos = {
         },
         {
             id: 3,
-            nombre: "Samsung Galaxy S10",
+            nombre: "Gama Planchita De Pelo Slice ceramic Shine Ion",
             descripcion: "Este es nuestro tercer post",
-            imagen:"./images/products/img-samsung-galaxy-s10.jpg",
+            imagen:"./images/products/PLANCHITA.png",
             idUsuario: 1,
             comentarios: [
                 {
@@ -42,16 +64,39 @@ const moduloDatos = {
                     idUsuario: 1,
                     texto: "Mi primer comentario"
 
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario"
                 }
             ]
         },
         {
             id: 4,
-            nombre: "Samsung Smart Tv",
+            nombre: "Organizador de Maquillaje",
             descripcion: "Este es nuestro cuarto post",
-            imagen: "./images/products/img-tv-samsung-smart.jpg",
+            imagen: "./images/products/organizadormkp.png",
             idUsuario: 1,
             comentarios: [
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario"
+
+                },
                 {
                     id: 1,
                     idUsuario: 1,
