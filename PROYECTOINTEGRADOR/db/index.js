@@ -66,7 +66,7 @@ const moduloDatos = {
         {
             id: 3,
             nombre: "Gama Planchita De Pelo Slice ceramic Shine Ion",
-            descripcion: "Este es nuestro tercer post",
+            descripcion: "Tecnología de vanguardia. Sus placas de ceramico facilitan el alisado y te ayudarán a conseguir un lacio perfecto, como recién salido de la peluquería.",
             imagen:"./images/products/PLANCHITA.png",
             idUsuario: 1,
             comentarios: [
@@ -95,8 +95,188 @@ const moduloDatos = {
         {
             id: 4,
             nombre: "Organizador de Maquillaje",
-            descripcion: "Este es nuestro cuarto post",
+            descripcion: "Organizador con cajones. Ideal para tener todo tu maquillaje y cremas, ordenados en un solo lugar. Está hecho de material acrílico muy resistente y mucho más fuerte que el vidrio. Duradero y moderno.",
             imagen: "./images/products/organizadormkp.png",
+            idUsuario: 1,
+            comentarios: [
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                }
+            ]
+        },
+        {
+            id: 5,
+            nombre: "Shampoo",
+            descripcion: "Este shampoo de alta calidad, libre de sulfatos, está especialmente diseñado para limpiar y nutrir tu cabello, devolviéndole su vitalidad y brillo natural.",
+            imagen: "./images/products/shampoo.png",
+            idUsuario: 1,
+            comentarios: [
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                }
+            ]
+        },
+        {
+            id: 6,
+            nombre: "Acondicionador",
+            descripcion: "Cuidá tus mechas rubias con Blondifier Gloss Shampoo, un shampoo con sistema de reparación e iluminación.",
+            imagen: "./images/products/acondicionador.png",
+            idUsuario: 1,
+            comentarios: [
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                }
+            ]
+        },
+        {
+            id: 7,
+            nombre: "Dyson",
+            descripcion: "Si hay algo que no puede faltar en tu baño es un secador de pelo Dyson Supersonic. En ondas, rulos, lacio, usalo como más te guste. Este producto se encargará de cuidar la salud de tu cabello y de crear el look perfecto para cada ocasión. Es pequeño, liviano y viene a completar tu set de belleza en el hogar.",
+            imagen: "./images/products/dyson.png",
+            idUsuario: 1,
+            comentarios: [
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                }
+            ]
+        },
+        {
+            id: 8,
+            nombre: "Lipgloss",
+            descripcion: "¡Glossy, juicy, plumpy, baby! Logra ese brillo voluminoso con It-gloss, ahora en colores audaces que rellenan los labios con un color brillante en barra. Estos tonos seductores se deslizan de forma vibrante y se funden de forma neutra para unos labios nutridos e hidratados con volumen.",
+            imagen: "./images/products/lipgloss.png",
+            idUsuario: 1,
+            comentarios: [
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                }
+            ]
+        },
+        {
+            id: 9,
+            nombre: "Maquina de afeitar",
+            descripcion: "Con esta multigroomer de OM disfrutar de un producto de calidad, cuyos resultados estéticos son excelentes, es posible. Gracias a su funcionalidad podrás relucir el look que más te guste.",
+            imagen: "./images/products/maquina-de-afeitar.png",
+            idUsuario: 1,
+            comentarios: [
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                },
+                {
+                    id: 1,
+                    idUsuario: 1,
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
+
+                }
+            ]
+        },
+        {
+            id: 10,
+            nombre: "Serum",
+            descripcion: "Este serum antiarrugas es el 1er tratamiento antiedad que repara las arrugas y las rellena, promoviendo la producción de colágeno gracias al ácido hialurónico.",
+            imagen: "./images/products/serum.png",
             idUsuario: 1,
             comentarios: [
                 {
