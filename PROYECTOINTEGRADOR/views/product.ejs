@@ -32,7 +32,7 @@
 					<section class="comments">
 						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
 							<article>
-								<img src="https://via.placeholder.com/35" alt=""> 
+								<img src= "/images/users/<%= producto.comentarios[i].foto_Perfil%>" alt=> 
 								<div class="data">
 									<p class="user">
 										<strong> <a href="/user/profile/<%= producto.comentarios[i].id %>"> <%= producto.comentarios[i].nombreUsuario%> </a> </strong> 

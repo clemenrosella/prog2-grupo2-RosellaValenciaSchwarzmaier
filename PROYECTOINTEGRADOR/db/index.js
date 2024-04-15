@@ -11,20 +11,22 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Muy buen secador. Liviano. El sopleteo justo para tu peluquín. La temperatura tbn ideal.",
-                    nombreUsuario: "Victoria123"
-
+                    nombreUsuario: "laura.perez",
+                    foto_Perfil: "ftp1.png"
                 },
                 {
                     id: 2,
                     idUsuario: 2,
                     texto: "Mi hija quedó feliz 😄 💕 😊.",
-                    nombreUsuario: "Victoria58"
+                    nombreUsuario: "juan.martinez",
+                    foto_Perfil: "ftp3.png"
                 },
                 {
                     id: 3,
                     idUsuario: 3,
                     texto: "Muy buen producto!! funciona de diez, yo en lo personal lo primero que hago antes de comprar algo, es revisar los malos comentarios de cada producto y vi que este tenía pocos malos comentarios y le encare nomas , gracias a dios todo joya!! funciona de 10!!.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "ana.lopez",
+                    foto_Perfil: "ftp2.png"
                 }
             ]
         },
@@ -39,21 +41,24 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Mi primer comentario",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "laura.perez",
+                    foto_Perfil: "ftp1.png"
 
                 },
                 {
                     id: 2,
                     idUsuario: 2,
                     texto: "Mi primer comentario",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "laura.perez",
+                    foto_Perfil: "ftp1.png"
 
                 },
                 {
                     id: 3,
                     idUsuario: 3,
                     texto: "Mi primer comentario",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "laura.perez",
+                    foto_Perfil: "ftp1.png"
 
                 }
             ]
