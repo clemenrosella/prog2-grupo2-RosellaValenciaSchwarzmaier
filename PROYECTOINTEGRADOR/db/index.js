@@ -72,6 +72,109 @@ const moduloDatos = {
             ]
         }
     ]
-};
 
+   // Array de usuarios
+   usuarios: [
+    {
+        id: 1, // ID del usuario
+        username: "username1",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 2, // ID del usuario
+        username: "username2",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 3, // ID del usuario
+        username: "username3",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 4, // ID del usuario
+        username: "username4",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 5, // ID del usuario
+        username: "username5",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 6, // ID del usuario
+        username: "username6",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 7, // ID del usuario
+        username: "username7",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 8, // ID del usuario
+        username: "username8",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 9, // ID del usuario
+        username: "username9",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+    {
+        id: 10, // ID del usuario
+        username: "username10",
+        email: "email@gmail.com",
+        contrasenia: "user1234",
+        fotoPerfil: "./images/users/default-image.png",
+        createdAt: "2000-01-01 00:00:00",
+        updatedAt: "2024-04-12 10:32:57",
+        deletedAt: ""
+    },
+],
+};
 module.exports = moduloDatos; 
