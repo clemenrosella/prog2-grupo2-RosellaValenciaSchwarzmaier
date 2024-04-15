@@ -10,18 +10,21 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Muy buen secador. Liviano. El sopleteo justo para tu peluquín. La temperatura tbn ideal."
+                    texto: "Muy buen secador. Liviano. El sopleteo justo para tu peluquín. La temperatura tbn ideal.",
+                    nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 2,
                     idUsuario: 2,
-                    texto: "Mi hija quedó feliz 😄 💕 😊."
+                    texto: "Mi hija quedó feliz 😄 💕 😊.",
+                    nombreUsuario: "Victoria58"
                 },
                 {
                     id: 3,
                     idUsuario: 3,
-                    texto: "Muy buen producto!! funciona de diez, yo en lo personal lo primero que hago antes de comprar algo, es revisar los malos comentarios de cada producto y vi que este tenía pocos malos comentarios y le encare nomas , gracias a dios todo joya!! funciona de 10!!."
+                    texto: "Muy buen producto!! funciona de diez, yo en lo personal lo primero que hago antes de comprar algo, es revisar los malos comentarios de cada producto y vi que este tenía pocos malos comentarios y le encare nomas , gracias a dios todo joya!! funciona de 10!!.",
+                    nombreUsuario: "Victoria123"
                 }
             ]
         },
@@ -35,19 +38,22 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 2,
                     idUsuario: 2,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 3,
                     idUsuario: 3,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
 
                 }
             ]
@@ -62,19 +68,22 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
                 }
             ]
         },
@@ -88,34 +97,27 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario"
+                    texto: "Mi primer comentario",
+                    nombreUsuario: "Victoria123"
 
                 }
             ]
         },
         
-    ],
-    usuarios: [
-        {
-            id: 1, 
-            productos: [
-                {
-                    id: 1,
-                }
-            ]
-        }
     ],
 
    // Array de usuarios

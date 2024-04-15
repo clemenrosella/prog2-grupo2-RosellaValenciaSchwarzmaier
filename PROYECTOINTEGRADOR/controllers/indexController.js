@@ -4,7 +4,7 @@ const indexController = {
     home: function (req, res) {
         
         let productos = moduloDatos.productos;
-        
+
         res.render('index', { novedades: productos, masComentados: productos });
     }
 };
