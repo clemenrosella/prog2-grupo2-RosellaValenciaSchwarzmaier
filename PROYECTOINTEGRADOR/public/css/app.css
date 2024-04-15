@@ -69,11 +69,17 @@ hr {
 .main-header {
   padding: 15px 0;
   background-color: var(--yellow);
+  height: 210px;
 }
 
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
+}
+
+.main-header_home-link{
+  width:90px;
+  height: auto;
 }
 
 .main-header_credit-link {
