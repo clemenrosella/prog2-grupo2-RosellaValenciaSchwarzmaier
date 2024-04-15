@@ -71,7 +71,7 @@ const moduloDatos = {
                 }
             ]
         }
-    ]
+    ],
 
    // Array de usuarios
    usuarios: [

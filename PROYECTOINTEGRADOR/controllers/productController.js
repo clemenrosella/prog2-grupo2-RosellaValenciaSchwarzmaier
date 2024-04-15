@@ -18,7 +18,7 @@ const productController = {
     },
 
     productAdd: function(req,res){
-        res.render('productAdd')
+        res.render('product-add')
     },
 
 };
