@@ -17,8 +17,9 @@ const moduloDatos = {
         },
         {
             id: 2,
-            nombre: "Cafetera Moulineex",
+            nombre: "MacBook Pro",
             descripcion: "Este es nuestro segundo post",
+            imagen:"./images/products/img-macbook-pro-2019.jpg",
             idUsuario: 1,
             comentarios: [
                 {
@@ -31,8 +32,9 @@ const moduloDatos = {
         },
         {
             id: 3,
-            nombre: "Cafetera Moulineex",
+            nombre: "Samsung Galaxy S10",
             descripcion: "Este es nuestro tercer post",
+            imagen:"./images/products/img-samsung-galaxy-s10.jpg",
             idUsuario: 1,
             comentarios: [
                 {
@@ -45,8 +47,9 @@ const moduloDatos = {
         },
         {
             id: 4,
-            nombre: "Cafetera Moulineex",
+            nombre: "Samsung Smart Tv",
             descripcion: "Este es nuestro cuarto post",
+            imagen: "./images/products/img-tv-samsung-smart.jpg",
             idUsuario: 1,
             comentarios: [
                 {
