@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #D38787;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -476,6 +476,10 @@ textarea.form-input {
   color: #fff;
 }
 
+.logomarca {
+  width:10px;
+  height: auto;
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
