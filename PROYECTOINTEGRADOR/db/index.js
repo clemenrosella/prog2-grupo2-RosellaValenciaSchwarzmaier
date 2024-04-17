@@ -303,7 +303,7 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario",
+                    texto: "El producto es excelente",
                     nombreUsuario: "maria.gonzalez",
                     foto_Perfil: "ftp5.png"
 
@@ -311,7 +311,7 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario",
+                    texto: "Siento la piel mucho mas luminosa y elástica. El producto tiene un aroma riquísimo y cuando lo pones no deja la sensación de tener algo pesado.",
                     nombreUsuario: "maria.gonzalez",
                     foto_Perfil: "ftp5.png"
 
@@ -319,10 +319,9 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario",
+                    texto: "Este serum es todo lo que está bien en el mundo. Es perfecto para piel grasa con tendencia acnéica y piel sensible.",
                     nombreUsuario: "maria.gonzalez",
                     foto_Perfil: "ftp5.png"
-
                 }
             ]
         },

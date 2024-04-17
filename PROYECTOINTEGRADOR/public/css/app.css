@@ -67,9 +67,9 @@ hr {
 
 /*====== Main Header ======*/
 .main-header {
-  padding: 15px 0;
+  padding: 10px 0;
   background-color: var(--yellow);
-  height: 210px;
+  height: 195px;
 }
 
 .main-header_home-link,
