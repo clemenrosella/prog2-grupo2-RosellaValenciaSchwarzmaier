@@ -7,7 +7,7 @@ const userController = {
     register: function(req, res) {
         return res.render('register');
     },
-    profile: function(req, res) { // EL PERFIL DE OTRO USUARIO
+    profile: function(req, res) { // EL PERFIL DE OTROS USUARIOS
         let id = req.params.id;
         let usuario = {};
     
@@ -23,7 +23,7 @@ const userController = {
             }
         }
 
-        return res.render('profile', { usuario: usuario, publicaciones: publicaciones, miusuario: false, mispublicaciones: false });
+        return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
     },
     myProfile: function(req, res) { // MI PERFIL
         let id = req.params.id;
@@ -41,7 +41,7 @@ const userController = {
             }
         }
     
-        return res.render('profile', { miusuario: usuario, mispublicaciones: publicaciones, usuario: false, publicaciones: false });
+        return res.render('profile', { miusuario: usuario, mispublicaciones: publicaciones });
     },
     editProfile: function(req, res) {
         return res.render('profile-edit');
