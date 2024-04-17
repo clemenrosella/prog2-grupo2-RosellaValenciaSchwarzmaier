@@ -80,7 +80,7 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Excelente planchado, en dos pasadas ya me deja lacio hermoso y tengo el pelo con ondas. Es cómoda, había leído que se calentaba mucho le plástico y no me parece así, o sea si se calienta pero no al nivel de largar olor y quemarte. Es larga por lo tanto mechón que agarre mechón que lo plancha genial. Realmente estoy enamorada de lo práctica que es. Ahora solo espero que dure porque es muy linda.",
+                    texto: "Excelente planchado, en dos pasadas ya me deja lacio hermoso y tengo el pelo con ondas. Es cómoda, había leído que se calentaba mucho el plástico y no me parece así, o sea si se calienta pero no al nivel de largar olor y quemarte. Es larga por lo tanto mechón que agarre mechón que lo plancha genial. Realmente estoy enamorada de lo práctica que es. Ahora solo espero que dure porque es muy linda.",
                     nombreUsuario: "Victoria123"
 
                 },
@@ -139,14 +139,14 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "",
+                    texto: "Me dejo el pelo sedoso y brillante. 10/10",
                     nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario",
+                    texto: "Feliz con los resultados",
                     nombreUsuario: "Victoria123"
 
                 }
@@ -199,7 +199,7 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: " Me dejó el pelo mejor de lo que me dejan en la pelu, incluso ni planchita hizo falta, cero frizz, una sublime suavidad.",
+                    texto: "Me dejó el pelo mejor de lo que me dejan en la pelu, incluso ni planchita hizo falta, cero frizz, una sublime suavidad.",
                     nombreUsuario: "Victoria123"
 
                 },
@@ -282,21 +282,21 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario",
+                    texto: "Tengo la piel mas brillante que nunca. ",
                     nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario",
+                    texto: "Un poco caro, pero vale cada centavo, excelente producto.",
                     nombreUsuario: "Victoria123"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "Mi primer comentario",
+                    texto: "Me noto 10 años mas joven",
                     nombreUsuario: "Victoria123"
 
                 }

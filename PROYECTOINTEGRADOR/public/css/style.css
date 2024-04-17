@@ -4,17 +4,19 @@
 }
 
 .main-navbar li a:hover {
-  color: white
+  color: white;
 }
 
 .main-header_credit-link {
   font-family: "Playfair Display", serif;
-  color: #703F30
+  color: #703F30;
+  font-size: 17px;
 }
 
 .main-navbar {
   font-family: "Playfair Display", serif;
-  color: #703F30
+  color: #703F30;
+  font-size: 15px;
 }
 
 
@@ -25,12 +27,40 @@ p,h2 {
 
 .products-title {
   color: #703F30;
+  font-size: 30px;
 }
 
 body {
   padding: 10px 0;
   background-color: #d387873b;
   height: 195px;
+}
+
+.logout{
+  font-family: "Playfair Display", serif;
+  color: #703F30;
+}
+
+form button.logout:hover{
+  color: white;
+}
+
+.claseform{
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  color: black;
+  font-size: 20px;
+  font-style: none;
+}
+
+.claseregistro{
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  color: black;
+  font-size: 20px;
+  font-style: none;
+}
+
+.main-header {
+  height: 205px;
 }
 
 /*body {
