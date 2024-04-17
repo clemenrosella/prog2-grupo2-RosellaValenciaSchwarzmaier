@@ -309,59 +309,59 @@ const moduloDatos = {
    usuarios: [
     {
         id: 1, // ID del usuario
-        username: "username1",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
-        fotoPerfil: "./images/users/default-image.png",
+        username: "maria.gonzales",
+        email: "maria.gonzales@example.com",
+        contrasenia: "contrasenia1",
+        fotoPerfil: "/images/users/ftp5.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
         deletedAt: ""
     },
     {
         id: 2, // ID del usuario
-        username: "username2",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
-        fotoPerfil: "./images/users/default-image.png",
+        username: "juan.martinez",
+        email: "juan.martinez@example.com",
+        contrasenia: "contrasenia2",
+        fotoPerfil: "/images/users/ftp3.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
         deletedAt: ""
     },
     {
         id: 3, // ID del usuario
-        username: "username3",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
-        fotoPerfil: "./images/users/default-image.png",
+        username: "ana.lopez",
+        email: "ana.lopez@example.com",
+        contrasenia: "contrasenia3",
+        fotoPerfil: "/images/users/ftp2.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
         deletedAt: ""
     },
     {
         id: 4, // ID del usuario
-        username: "username4",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
-        fotoPerfil: "./images/users/default-image.png",
+        username: "carlos.rodriguez",
+        email: "carlos.rodriguez@example.com",
+        contrasenia: "contrasenia4",
+        fotoPerfil: "/images/users/ftp4.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
         deletedAt: ""
     },
     {
         id: 5, // ID del usuario
-        username: "username5",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
-        fotoPerfil: "./images/users/default-image.png",
+        username: "laura.perez",
+        email: "laura.perez@example.com",
+        contrasenia: "contrasenia5",
+        fotoPerfil: "/images/users/ftp1.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
         deletedAt: ""
     },
     {
         id: 6, // ID del usuario
-        username: "username6",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
+        username: "carla.aloy",
+        email: "carla.aloy@example.com",
+        contrasenia: "contrasenia6",
         fotoPerfil: "./images/users/default-image.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
@@ -369,9 +369,9 @@ const moduloDatos = {
     },
     {
         id: 7, // ID del usuario
-        username: "username7",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
+        username: "susana.garcia",
+        email: "susana.garcia@gmail.com",
+        contrasenia: "contrasenia7",
         fotoPerfil: "./images/users/default-image.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
@@ -379,9 +379,9 @@ const moduloDatos = {
     },
     {
         id: 8, // ID del usuario
-        username: "username8",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
+        username: "valentina.suarez",
+        email: "silvana.suarez@example.com",
+        contrasenia: "contrasenia8",
         fotoPerfil: "./images/users/default-image.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
@@ -389,9 +389,9 @@ const moduloDatos = {
     },
     {
         id: 9, // ID del usuario
-        username: "username9",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
+        username: "lara.fernandez",
+        email: "lucia.fernandez@gexample.com",
+        contrasenia: "contrasenia9",
         fotoPerfil: "./images/users/default-image.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
@@ -399,9 +399,9 @@ const moduloDatos = {
     },
     {
         id: 10, // ID del usuario
-        username: "username10",
-        email: "email@gmail.com",
-        contrasenia: "user1234",
+        username: "ramiro.perez",
+        email: "ramiro.perez@gmail.com",
+        contrasenia: "contrasenia10",
         fotoPerfil: "./images/users/default-image.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
