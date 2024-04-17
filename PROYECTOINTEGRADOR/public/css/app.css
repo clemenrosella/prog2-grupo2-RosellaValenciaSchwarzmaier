@@ -482,11 +482,6 @@ textarea.form-input {
   color: #fff;
 }
 
-.logomarca {
-  width:10px;
-  height: auto;
-}
-
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {

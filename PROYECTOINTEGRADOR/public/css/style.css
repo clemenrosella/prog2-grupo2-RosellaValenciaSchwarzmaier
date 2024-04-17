@@ -1,8 +1,45 @@
+.logomarca {
+  width:10px;
+  height: auto;
+}
+
+.main-navbar li a:hover {
+  color: white
+}
+
+.main-header_credit-link {
+  font-family: "Playfair Display", serif;
+  color: #703F30
+}
+
+.main-navbar {
+  font-family: "Playfair Display", serif;
+  color: #703F30
+}
+
+
+p,h2 {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  color: black;
+}
+
+.products-title {
+  color: #703F30;
+}
+
 body {
+  padding: 10px 0;
+  background-color: #d387873b;
+  height: 195px;
+}
+
+/*body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
-}
+}*/
+
+

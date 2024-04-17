@@ -73,7 +73,7 @@ const moduloDatos = {
                 {
                     id: 1,
                     idUsuario: 1,
-                    texto: "La mejor compra que hize chicas",
+                    texto: "La mejor compra que hice chicas",
                     nombreUsuario: "Victoria123"
 
                 },
@@ -372,36 +372,6 @@ const moduloDatos = {
         username: "susana.garcia",
         email: "susana.garcia@gmail.com",
         contrasenia: "contrasenia7",
-        fotoPerfil: "./images/users/default-image.png",
-        createdAt: "2000-01-01 00:00:00",
-        updatedAt: "2024-04-12 10:32:57",
-        deletedAt: ""
-    },
-    {
-        id: 8, // ID del usuario
-        username: "valentina.suarez",
-        email: "silvana.suarez@example.com",
-        contrasenia: "contrasenia8",
-        fotoPerfil: "./images/users/default-image.png",
-        createdAt: "2000-01-01 00:00:00",
-        updatedAt: "2024-04-12 10:32:57",
-        deletedAt: ""
-    },
-    {
-        id: 9, // ID del usuario
-        username: "lara.fernandez",
-        email: "lucia.fernandez@gexample.com",
-        contrasenia: "contrasenia9",
-        fotoPerfil: "./images/users/default-image.png",
-        createdAt: "2000-01-01 00:00:00",
-        updatedAt: "2024-04-12 10:32:57",
-        deletedAt: ""
-    },
-    {
-        id: 10, // ID del usuario
-        username: "ramiro.perez",
-        email: "ramiro.perez@gmail.com",
-        contrasenia: "contrasenia10",
         fotoPerfil: "./images/users/default-image.png",
         createdAt: "2000-01-01 00:00:00",
         updatedAt: "2024-04-12 10:32:57",
