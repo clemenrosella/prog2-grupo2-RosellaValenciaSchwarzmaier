@@ -41,7 +41,7 @@ const userController = {
             }
         }
     
-        return res.render('profile', { miusuario: usuario, mispublicaciones: publicaciones });
+        return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
     },
     editProfile: function(req, res) {
         return res.render('profile-edit');

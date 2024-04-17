@@ -18,7 +18,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.nombre %></h2> 
 			<p class="product-detail-description">
-				<a href="/product/add">Editar</a>  <!-- Esto no tiene q redireccionar a product add -->
+				<a href="#">Editar</a>  <!-- Esto no tiene q redireccionar a product add -->
 			</p>
 		</div>
 		<div class="product-detail">
@@ -35,7 +35,7 @@
 								<img src= "/images/users/<%= producto.comentarios[i].foto_Perfil%>" alt=> 
 								<div class="data">
 									<p class="user">
-										<strong> <a href="/user/profile/<%= producto.comentarios[i].id %>"> <%= producto.comentarios[i].nombreUsuario%> </a> </strong> 
+										<strong> <a href="/user/profile%>"> <%= producto.comentarios[i].nombreUsuario%> </a> </strong> 
 										<%= producto.comentarios[i].texto %>
 									</p>
 								</div>
@@ -51,7 +51,7 @@
 					<hr>
 				</div>
 			</div>
-		</div>dyson
+		</div>
 	</div>
 	<!-- /product detail -->
 
