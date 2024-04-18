@@ -49,16 +49,16 @@ const moduloDatos = {
                     id: 2,
                     idUsuario: 2,
                     texto: "Totalmente recomendable el producto.",
-                    nombreUsuario: "laura.perez",
-                    foto_Perfil: "ftp1.png"
+                    nombreUsuario: "juan.martinez",
+                    foto_Perfil: "ftp3.png"
 
                 },
                 {
                     id: 3,
                     idUsuario: 3,
                     texto: "El producto es perfecto, lo unico malo es que la caja vino toda desarmada y super aplastada, un poco más y el producto estaba fuera de su caja. Entiendo que quizas en el viaje se pueda abrir si tambien llevan otros productos, pero al menos pongan cinta para que no se abra. Si uno compra algo se espera que la caja donde viene el producto también llegue en buenas condiciones.",
-                    nombreUsuario: "laura.perez",
-                    foto_Perfil: "ftp1.png"
+                    nombreUsuario: "carlos.rodriguez",
+                    foto_Perfil: "ftp4.png"
 
                 }
             ]
@@ -74,21 +74,24 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "La mejor compra que hice chicas",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "ana.lopez",
+                    foto_Perfil: "ftp2.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Excelente planchado, en dos pasadas ya me deja lacio hermoso y tengo el pelo con ondas. Es cómoda, había leído que se calentaba mucho el plástico y no me parece así, o sea si se calienta pero no al nivel de largar olor y quemarte. Es larga por lo tanto mechón que agarre mechón que lo plancha genial. Realmente estoy enamorada de lo práctica que es. Ahora solo espero que dure porque es muy linda.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "carlos.rodriguez",
+                    foto_Perfil: "ftp4.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "La planchita es altamente valorada por su capacidad de calentar rápido y dejar el pelo perfecto en pocas pasadas. Los usuarios destacan su excelente calidad, su practicidad y lo liviana que es, facilitando su uso. Además, se menciona que es muy buena para controlar el frizz y que las placas dejan el cabello suave y brillante. Es considerada una opción recomendable por su relación calidadprecio.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "juan.martinez",
+                    foto_Perfil: "ftp3.png"
                 }
             ]
         },
@@ -103,21 +106,24 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Es hermoso, me encanto el material y el modelo, súper práctico.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "carlos.rodriguez",
+                    foto_Perfil: "ftp4.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Me sirvió para lo que quería, que es ordenar mi maquillaje, cremas, etc. Pero no es para muchas cosas, en mi caso tengo lo justo y necesario y entra perfecto. Si bien no es mal producto, creo que el precio no es acorde ya que no es la mejor calidad.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "maria.gonzalez",
+                    foto_Perfil: "ftp5.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Era para mi novia y le gustó mucho.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "laura.perez",
+                    foto_Perfil: "ftp1.png"
 
                 }
             ]
@@ -133,21 +139,24 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Me lo recomendó mi estilista. Es la segunda vez q lo compro. Tengo el pelo procesado x la decoloración, y este combo me deja divino el pelo. Lo recomiendo =).",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "juan.martinez",
+                    foto_Perfil: "ftp3.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Me dejo el pelo sedoso y brillante. 10/10",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "ana.lopez",
+                    foto_Perfil: "ftp2.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Feliz con los resultados",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "carlos.rodriguez",
+                    foto_Perfil: "ftp4.png"
 
                 }
             ]
@@ -163,21 +172,24 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Excelente producto, lastima que para nosotros este bastante caro. Pero dura bastante, solo se usa poca cantidad para obtener un buen lavado. Lo volvería a comprar.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "maria.gonzalez",
+                    foto_Perfil: "ftp5.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Es muy buen producto, marca y calidad!!!.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "laura.perez",
+                    foto_Perfil: "ftp1.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Buenisimo producto",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "juan.martinez",
+                    foto_Perfil: "ftp3.png"
 
                 }
             ]
@@ -193,22 +205,24 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Dónde estuvo éste secador toda mí vida?",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "carlos.rodriguez",
+                    foto_Perfil: "ftp4.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Me dejó el pelo mejor de lo que me dejan en la pelu, incluso ni planchita hizo falta, cero frizz, una sublime suavidad.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "ana.lopez",
+                    foto_Perfil: "ftp2.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Seca rápido, no hace casi ruido, es liviano, cable bien largo. Larga vida al marciano soplapelo!.",
-                    nombreUsuario: "Victoria123"
-
+                    nombreUsuario: "laura.perez",
+                    foto_Perfil: "ftp1.png"
                 }
             ]
         },
@@ -223,21 +237,23 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Notás la boca más hinchada. Si estás buscando eso, es una buena opción. El efecto es súper glossy. ",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "maria.gonzalez",
+                    foto_Perfil: "ftp5.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Es una propuesta original porque realmente voluminiza y es muy brillante, pero precio-calidad no convence tanto.",
-                    nombreUsuario: "Victoria123"
-
+                    nombreUsuario: "juan.martinez",
+                    foto_Perfil: "ftp3.png"
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Recomiendo utilizar algún aceite antes (yo uso de rosa mosqueta) o cualquier hidratante, y luego poner el producto distribuyéndolo por fuera de los bordes para que haga el efecto voluminizador y no se resequen los labios.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "carlos.rodriguez",
+                    foto_Perfil: "ftp4.png"
 
                 }
             ]
@@ -253,21 +269,24 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Bastante bueno, más teniendo en cuenta el precio. No le tenía mucha fe, no les voy a mentir.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "laura.perez",
+                    foto_Perfil: "ftp1.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Buenisima",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "ana.lopez",
+                    foto_Perfil: "ftp2.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Se me rompio a la semana",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "maria.gonzalez",
+                    foto_Perfil: "ftp5.png"
 
                 }
             ]
@@ -283,21 +302,24 @@ const moduloDatos = {
                     id: 1,
                     idUsuario: 1,
                     texto: "Tengo la piel mas brillante que nunca. ",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "carlos.rodriguez",
+                    foto_Perfil: "ftp4.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Un poco caro, pero vale cada centavo, excelente producto.",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "juan.martinez",
+                    foto_Perfil: "ftp3.png"
 
                 },
                 {
                     id: 1,
                     idUsuario: 1,
                     texto: "Me noto 10 años mas joven",
-                    nombreUsuario: "Victoria123"
+                    nombreUsuario: "ana.lopez",
+                    foto_Perfil: "ftp2.png"
 
                 }
             ]
