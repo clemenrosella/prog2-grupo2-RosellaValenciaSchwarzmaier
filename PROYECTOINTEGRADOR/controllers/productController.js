@@ -14,11 +14,12 @@ const productController = {
             }
         }
 
-        res.render('product', { producto : productoEncontrado})
+        res.render('product', { producto : productoEncontrado});
     },
 
     productAdd: function(req,res){
-        res.render('product-add')
+        let usuario= moduloDatos.usuarios[0];
+        res.render('product-add',  {usuario:usuario});
     },
 
 };

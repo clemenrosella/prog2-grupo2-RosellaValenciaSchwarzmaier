@@ -26,7 +26,8 @@ const userController = {
         return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
     },
     editProfile: function(req, res) {
-        return res.render('profile-edit');
+        let usuario= moduloDatos.usuarios[0];
+        return res.render('profile-edit', {usuario:usuario});
     },
 };
 
