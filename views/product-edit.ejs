@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<%- include('./partials/head') %>
+
+<body>
+	<!-- Header -->
+	<%- include('./partials/headerLogueado') %>
+	<!-- /Header -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">EDITAR PRODUCTO <%= producto.nombre %></h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<!--<h2 class="col-12" id="agregarProd">Agregar Producto</h2> -->
+
+                <form action="/editar-producto" method="POST" class="clase-productadd">
+                <div class="form-group">
+                    <label for="nombre">Ingrese cambios en el nombre del producto:</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Ingrese cambios en la descripción del producto:</label>
+                    <input type="text" id="descripcion" name="descripcion" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Ingrese cambios en el precio del producto:</label>
+                    <input type="number" id="precio" name="precio" class="form-control" step="0.01" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Editar Producto</button>
+                </form>
+        </div>
+    </div>
+
+	<!-- footer -->
+	<%- include('./partials/footer') %>
+	<!-- /footer -->
+</body>
+
+</html>
+

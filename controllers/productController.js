@@ -22,6 +22,19 @@ const productController = {
         res.render('product-add',  {usuario:usuario});
     },
 
+    productEdit: function (req, res) {
+        let id = req.params.id;
+        let productos = moduloDatos.productos;
+        let producto = null;
+        
+        for (let i = 0; i < productos.length; i++) {
+            if (id == productos[i].id) {
+                producto = productos[i];
+            };
+        };
+        res.render('product-edit', { usuario: usuario, producto: producto })
+    },
+
 };
 
 module.exports = productController;
