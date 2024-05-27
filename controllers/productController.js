@@ -25,6 +25,7 @@ const productController = {
     productEdit: function (req, res) {
         let id = req.params.id;
         let productos = moduloDatos.productos;
+        let usuario= moduloDatos.usuarios;
         let producto = null;
         
         for (let i = 0; i < productos.length; i++) {
