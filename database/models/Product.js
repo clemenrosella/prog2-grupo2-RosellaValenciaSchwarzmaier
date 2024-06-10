@@ -21,6 +21,10 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING
         },
 
+        id_usuario: {
+            type: dataTypes.INTEGER //faltaba agregar esta de nuestra tabla sql al modelo. 
+        },
+
         createdAt:{
             type: dataTypes.DATE
         },
@@ -41,7 +45,20 @@ module.exports = function(sequelize, dataTypes){
         underscored: true,
     }
 
-    let Product = sequelize.define(alias, cols, config)
+    let Product = sequelize.define(alias, cols, config);
+
+    Product.associate = function(models) {
+        Product.belongsTo(models.User, {
+            as: "usuario_producto",
+            foreignKey: "id_usuario"
+        }),
+
+        Product.hasMany(models.Comment, {
+            as: "comentarios_producto",
+            foreignKey: "id_producto",
+        })
+    }
+    
     return Product
 
 }
