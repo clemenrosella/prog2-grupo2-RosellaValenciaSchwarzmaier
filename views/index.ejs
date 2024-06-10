@@ -26,12 +26,12 @@
 					<section class="product-box">
 						<a href="/product/<%= novedades[i].id %>">
 							<figure class="product-box_image">
-								<img src="<%= novedades[i].imagen %>" alt="<%= novedades[i].nombre %>">
+								<img src="/images/products/<%= novedades[i].imagen %>" alt="<%= novedades[i].nombre %>">
 							</figure>
 							<article class="product-box_data">
 								<h2><%= novedades[i].nombre %></h2>
 								<p><%= novedades[i].descripcion %></p>
-								<p>Comentarios: <%= novedades[i].comentarios.length %></p>
+								<p>Comentarios: <%= novedades[i].comentarios_producto.length %></p>
 							</article>
 						</a>
 					</section>
@@ -71,12 +71,12 @@
 					<section class="product-box">
 						<a href="/product/<%= masComentados[i].id %>">
 							<figure class="product-box_image">
-								<img src="<%= masComentados[i].imagen %>" alt="<%= masComentados[i].nombre %>">
+								<img src="/images/products/<%= masComentados[i].imagen %>" alt="<%= masComentados[i].nombre %>">
 							</figure>
 							<article class="product-box_data">
 								<h2><%= masComentados[i].nombre %></h2>
 								<p><%= masComentados[i].descripcion %></p>
-								<p>Comentarios: <%= masComentados[i].comentarios.length %></p>
+								<p>Comentarios: <%= masComentados[i].comentarios_producto.length %></p>
 							</article>
 						</a>
 					</section>

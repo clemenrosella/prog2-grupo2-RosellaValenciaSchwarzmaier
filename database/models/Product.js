@@ -25,23 +25,23 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER //faltaba agregar esta de nuestra tabla sql al modelo. 
         },
 
-        createdAt:{
-            type: dataTypes.DATE
-        },
+        // createdAt:{
+        //     type: dataTypes.DATE
+        // },
 
-        updatedAt:{
-            type: dataTypes.DATE
-        },
+        // updatedAt:{
+        //     type: dataTypes.DATE
+        // },
 
-        deletedAt:{
-            type: dataTypes.DATE
-        },
+        // deletedAt:{
+        //     type: dataTypes.DATE
+        // },
 
     }
 
     let config= {
         tableName: "productos",
-        timestamps: true,
+        timestamps: false,
         underscored: true,
     }
 
@@ -58,7 +58,7 @@ module.exports = function(sequelize, dataTypes){
             foreignKey: "id_producto",
         })
     }
-    
+
     return Product
 
 }

@@ -23,20 +23,20 @@ module.exports = function(sequelize, dataTypes){
         foto_de_perfil:{
             type: dataTypes.STRING
         },
-        createdAt: {
-            type: dataTypes.DATE
-        },
-        updatedAt:{
-            type: dataTypes.DATE
-        },
-        deleatedAt: {
-            type: dataTypes.DATE
-        },
+        // createdAt: {
+        //     type: dataTypes.DATE
+        // },
+        // updatedAt:{
+        //     type: dataTypes.DATE
+        // },
+        // deleatedAt: {
+        //     type: dataTypes.DATE
+        // },
     }
 
     let config= {
         tableName: "usuarios",
-        timestamps: true,
+        timestamps: false,
         underscored: true,
     }
 

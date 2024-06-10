@@ -5,24 +5,24 @@ module.exports = function(sequelize, dataTypes){
     let cols ={
         id:{
             autoIncrement: true,
-            primarKey: true,
+            primaryKey: true,
             type: dataTypes.INTEGER,
         },
 
         texto_comentario:{
             type: dataTypes.STRING(500)
         },
-        createdAt:{
-            type: dataTypes.DATE
-        },
+        // createdAt:{
+        //     type: dataTypes.DATE
+        // },
 
-        updatedAt:{
-            type: dataTypes.DATE
-        },
+        // updatedAt:{
+        //     type: dataTypes.DATE
+        // },
 
-        deletedAt:{
-            type: dataTypes.DATE
-        },
+        // deletedAt:{
+        //     type: dataTypes.DATE
+        // },
 
         id_usuario:{
             type: dataTypes.INTEGER
@@ -34,8 +34,8 @@ module.exports = function(sequelize, dataTypes){
     }
 
     let config= {
-        tableName: "comentario",
-        timestamps:true,
+        tableName: "comentarios",
+        timestamps: false,
         underscored: true,
     }
 

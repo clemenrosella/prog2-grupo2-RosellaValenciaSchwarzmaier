@@ -1,7 +1,7 @@
 //const moduloDatos = require('../db/index');
-const db = requiere("../database/models");
+const db = require("../database/models");
 const User = db.User;
-const Product = db.Product
+const Product = db.Product;
 
 const indexController = {
     home: function (req, res) {
