@@ -29,6 +29,19 @@ const userController = {
         let usuario= moduloDatos.usuarios[0];
         return res.render('profile-edit', {usuario:usuario});
     },
+    store: function (req, res) {
+        let form = req.body;
+        db.Usuario.create({
+            nombreUsuario: req.body.usuario,
+            email: req.body.email,
+            contrasena: bcrypt.hashSync(req.body.password, 10),
+            fechaDeNacimiento: req.body.nacimiento,
+            dni: req.body.dni,
+            fotoPerfil: req.body.fotoPerfil
+        });
+
+        res.send(req.body);
+    },
 };
 
 module.exports = userController;
