@@ -53,11 +53,11 @@ const productController = {
         if (errors.length > 0){
             res.render ("product-add", {usuario:usuario, errores:errors});
         }else{
-            Product.findOne({
+            Product.findOne({ 
                 where: { nombre: nombre_producto }
             })
             .then(function(response) {
-                if (!response) {
+                if (!response) { //Si no se encuentra un producto con el mismo nombre, se crea un nuevo producto con los datos proporcionados
                     return Product.create({
                         imagen: imagen_producto,
                         nombre: nombre_producto,
@@ -75,7 +75,7 @@ const productController = {
                 }
             })
             .catch(function(error) {
-                errors.push("Error de base de datos");
+                errors.push("Error de base de datos"); 
                 errors.push(error.message);
                 res.render("product-add", { usuario: usuario, errores: errors });
             });
