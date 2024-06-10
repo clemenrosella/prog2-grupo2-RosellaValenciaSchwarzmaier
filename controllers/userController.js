@@ -1,12 +1,42 @@
 const moduloDatos = require("../db/index");
+const db = require("../database/models");
+const {validationResult} = require('express-validator');
 
 const userController = {
     login: function(req, res) {
         return res.render('login');
     },
-    register: function(req, res) {
+    showRegister: function(req, res) {
         return res.render('register');
     },
+    register: function(req, res){ 
+        let errors= validationResult(req);
+
+        let email_usuario = req.body.email
+        let nombre_usuario = req.body.usuario
+        let contraseña_usuario = req.body.contraseña
+        let fecha_usuario = rq.body.fecha_nacimiento
+        let dni_usuario = req.body.nro_documento
+        let foto_usuario = req.body.foto_perfil
+
+        if(errors.isEmpty()) {
+            let userExists = db.User.findOne({ where: { email: email_usuario } });
+            if (userExists) {
+                return res.render('register', {
+                    errors: { email: { msg: 'El email ya está registrado.' } },
+                    old: req.body
+                })};
+        }else {
+            res.render('register', ({errors: errors.mapped()}, {old: req.body}));
+        }
+
+        db.User.create(form)
+            .then(function(result){
+            return res.redirect('/login')
+        })
+        
+    },
+    
     profile: function(req, res) { 
         let id = 1;
         let usuario = {};
