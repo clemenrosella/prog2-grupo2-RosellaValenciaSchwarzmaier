@@ -41,6 +41,17 @@ module.exports = function(sequelize, dataTypes){
     }
 
     let User = sequelize.define(alias, cols, config)
+    
+    User.associate = function(models) {
+        User.hasMany(models.Product, {
+            as: 'productos_usuario',
+            foreignKey: 'id_usuario'
+        }),
+        User.hasMany(models.Comment, {
+            as:'comentarios_usuario',
+            foreignKey: 'id_producto'
+        })
+    }
     return User
 
 }
