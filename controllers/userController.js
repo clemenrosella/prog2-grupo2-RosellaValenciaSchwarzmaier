@@ -1,4 +1,4 @@
-//const moduloDatos = require("../db/index");
+const moduloDatos = require("../db/index");
 
 const bcrypt = require('bcryptjs')
 const db = require("../database/models");
@@ -90,6 +90,11 @@ const userController = {
     editProfile: function(req, res) {
         let usuario= moduloDatos.usuarios[0];
         return res.render('profile-edit', {usuario:usuario});
+    },
+    logout: function (req,res) {
+        req.session.destroy();
+        res.clearCookie("usuarioId");
+        return res.redirect("/");
     },
 };
 

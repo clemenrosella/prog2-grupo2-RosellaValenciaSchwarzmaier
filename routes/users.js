@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 const db = require("../database/models");
 const { body } = require('express-validator');
 const bcrypt = require('bcryptjs');
@@ -60,6 +61,7 @@ router.get('/register', userController.showRegister);
 router.post('/register', validateRegisterForm, userController.register);
 router.get('/profile', userController.profile);
 router.get('/editProfile', userController.editProfile);
+router.post("/logout", userController.logout);
 
 module.exports = router;
 

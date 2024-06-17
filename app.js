@@ -10,6 +10,7 @@ const User = db.User;
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
+const { Console } = require('console');
 
 var app = express();
 
@@ -34,8 +35,8 @@ app.use(function(req, res, next){
   if(req.cookies.usuarioId != undefined && req.session.user ==undefined) {
     User.findByPk(req.cookies.usuarioId)
     .then(function (response) {
-      req.session.user = response.email,
-      req.locals.user = req.session.user
+      req.session.user = response.email;
+      res.locals.user = req.session.user;
     })
   }
 
@@ -51,6 +52,8 @@ app.use(function(req, res, next) {
   }
   return next();
 })
+
+
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
