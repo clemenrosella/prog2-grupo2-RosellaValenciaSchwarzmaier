@@ -6,8 +6,14 @@ const productController= require("../controllers/productController");
 
 const { body } = require("express-validator");
 
+let addValidations= [
+    body("nombre").notEmpty().withMessage(""),
+    body("descrpicion").notEmpty().withMessage(""),
+    body("precio").notEmpty().isNumeric().withMessage(""),
+];
+
 router.get("/add", productController.showProductAdd);
-router.post("/add", productController.productAdd);
+router.post("/add", addValidations, productController.productAdd);
 
 router.get("/:id", productController.product);
 
