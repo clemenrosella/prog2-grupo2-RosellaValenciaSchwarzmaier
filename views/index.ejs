@@ -5,7 +5,12 @@
 
 <body>
 	
-	<%- include('./partials/headerDesLogueado') %>
+	<% if (res.locals.user) { %>
+		<%- include('./partials/headerLogueado') %>
+
+	<% } else{ %>
+		<%- include('./partials/headerDesLogueado') %>
+	<% } %>
 
 	<!-- Banner -->
 	<div class="banner">
