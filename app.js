@@ -21,6 +21,37 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret : 'Mi palabra secreta de la aplicacion',
+  resave : true,
+  saveUninitialized: false
+}))
+
+
+
+app.use(function(req, res, next){
+
+  if(req.cookies.usuarioId != undefined && req.session.user ==undefined) {
+    User.findByPk(req.cookies.usuarioId)
+    .then(function (response) {
+      req.session.user = response.email,
+      req.locals.user = req.session.user
+    })
+  }
+
+  return next();
+}); 
+
+
+app.use(function(req, res, next) {
+  res.locals.user = null
+
+  if (res.locals.user != undefined) {
+    res.locals.user = req.session.user
+  }
+  return next();
+})
+
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/product', productRouter);
