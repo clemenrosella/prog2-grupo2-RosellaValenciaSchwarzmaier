@@ -1,11 +1,43 @@
-const moduloDatos = require("../db/index");
+//const moduloDatos = require("../db/index");
+
+const bcrypt = require('bcryptjs')
 const db = require("../database/models");
 const {validationResult} = require('express-validator');
+const User = db.User;
 
 const userController = {
-    login: function(req, res) {
+    showLogin: function(req, res) {
         return res.render('login');
     },
+
+    login: function(req, res){
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+            //Procesamos el controlador normalmente
+            User.findOne({
+                where: [{email : req.body.email }]
+            })
+
+            .then(function (response) {
+                req.session.user = {
+                    usuario: response.usuario,
+                    contraseña: response.contraseña
+                }
+                if (req.body.recordarme){
+                    res.cookie('usuarioId', response.id, {maxAge: 1000 * 60 * 30})
+                };
+                return res.redirect('/');
+            })
+            .catch(function(error) {
+                console.log(error)
+            })
+
+        } else{
+            res.render('login', ({errors: errors.mapped()}, {old: req.body}));
+        }
+    },
+
     showRegister: function(req, res) {
         return res.render('register');
     },
@@ -58,19 +90,6 @@ const userController = {
     editProfile: function(req, res) {
         let usuario= moduloDatos.usuarios[0];
         return res.render('profile-edit', {usuario:usuario});
-    },
-    store: function (req, res) {
-        let form = req.body;
-        db.Usuario.create({
-            nombreUsuario: req.body.usuario,
-            email: req.body.email,
-            contrasena: bcrypt.hashSync(req.body.password, 10),
-            fechaDeNacimiento: req.body.nacimiento,
-            dni: req.body.dni,
-            fotoPerfil: req.body.fotoPerfil
-        });
-
-        res.send(req.body);
     },
 };
 

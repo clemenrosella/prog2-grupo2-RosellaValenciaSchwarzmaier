@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session= require("express-session");
 const db = require("./database/models");
+const User = db.User;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -27,8 +28,6 @@ app.use(session({
   resave : true,
   saveUninitialized: false
 }))
-
-
 
 app.use(function(req, res, next){
 
