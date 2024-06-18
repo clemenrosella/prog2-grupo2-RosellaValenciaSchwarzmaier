@@ -11,7 +11,17 @@ const userController = require("../controllers/userController");
 
 // Validaciones
 const validateRegisterForm = [
-    body('email').isEmail().withMessage('Debes completar un email válido'),
+    body('email').notEmpty().isEmail().withMessage('Debes completar un email válido')
+    .custom(function(value){
+        return db.User.findOne({
+            where: [{email: value}]
+        })
+        .then(function(user){
+            if(user) {
+                throw new Error ("Este email ya esta registrado")
+            }
+        })
+    }),
     body('usuario').notEmpty().withMessage('Debes completar el campo de nombre'),
     body('contraseña').notEmpty().withMessage('Debes completar el campo de contraseña')
     .isLength({min: 4}).withMessage('La contraseña debe tener al menos 4 caracteres.'),
