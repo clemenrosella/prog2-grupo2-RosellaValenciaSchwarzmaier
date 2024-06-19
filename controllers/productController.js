@@ -65,6 +65,22 @@ const productController = {
     productEdit: function (req,res) {
         
     },
+    
+   productDelete: function (req, res) {
+        let id = req.params.id;
+        Product.destroy({
+            where:{
+                id: id
+            }
+
+        })
+        .then(function (response) {
+            return res.redirect("/")    
+        })
+        .catch(function (error){
+            res.send(error)
+        })
+   },
 
 };
 
