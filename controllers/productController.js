@@ -62,8 +62,45 @@ const productController = {
         }
     },
 
-    productEdit: function (req,res) {
+    showProductEdit: function (req,res) {
+       
+        if (!req.session.user){
+            return res.redirect("/login");
+        } else{
+            let id= req.params.id;
+
+        Product.findByPk(id)
+        .then(function(response){
+            if (response !== null){
+                res.render("product-edit", {producto: response})
+            } else{
+                res.send("No se encontró el producto")
+            }
+        })
+        .catch(function(error){
+            res.send(error)
+        })
+        }
         
+    },
+
+    productEdit: function (req,res) {
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()){
+            let producto = req.body;
+            producto.id_usuario = req.session.user.id;
+            
+            Product.update(producto)
+            .then(function (response) {
+                res.redirect("/")
+            })
+            .catch(function (error) {
+                res.send(error)
+            })
+        }else{
+            res.render("product-edit", {errores:errors})
+        }
     },
     
    productDelete: function (req, res) {
