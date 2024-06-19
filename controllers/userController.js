@@ -64,33 +64,63 @@ const userController = {
     profile: function(req, res) { 
         let id = req.params.id;
 
-        if(id === undefined) {
+        if(id === undefined || id === req.session.user.id) { // id == undefined 
+             {
             User.findByPk(req.session.user.id, {
                 include: [{
-                    association: 'productos_usuario'
-                }]
+                    association: 'productos_usuario', include: [
+                        {
+                            association: 'comentarios_producto'
+                }
+            ]
+                }],
+                order: [['updated_at', 'DESC']]
             })
                 .then(function(response) {
+                    let objUsuario = {
+                        id: response.id,
+                        email: response.email,
+                        fecha: response.fecha,
+                        dni: response.dni,
+                        fotoPerfil: response.foto_de_perfil
+                    }
                     //res.send(response)
-                    return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
+                    return res.render('profile', { usuario: usuario, publicaciones: response.productos_usuario, miPerfil: false });
 
                 })
                 .catch(function(error) {
                     return res.send(error)
                 })
-        }else {
+        }}else {
             User.findByPk(req.session.user.id, {
-                include: [{
-                    association: 'productos_usuario'
-                }]
+                include: [
+                    {
+                        association: 'productos_usuario', include: [
+                            {
+                                association: 'comentarios_producto'
+                    }
+                ]
+            }
+                ],
+                order: [['updated_at', 'DESC']]
             })
                 .then(function(response) {
                     if(response === null) {
-                        res.render('error', {})
+                        res.send("El usuario solicitado no existe.")
+                        res.render('error', {error: {}, message: "Ususario no encontrado."})
+                    } else {
+                        let objUsuario = {
+                            id: response.id, 
+                            email: response.email,
+                            fecha: response.fecha,
+                            dni: response.dni,
+                            fotoPerfil: response.foto_de_perfil
+
+                        }
+                        
+                        return res.render('profile', { usuario: objUsuario, publicaciones: response.productos_usuario , miPerfil: false});
                     }
                     //res.send(response)
-                    return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
-
                 })
                 .catch(function(error) {
                     return res.send(error)
