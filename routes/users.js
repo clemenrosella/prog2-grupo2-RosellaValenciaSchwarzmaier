@@ -69,7 +69,7 @@ router.get('/login', userController.showLogin);
 router.post('/login', validateLoginForm, userController.login);
 router.get('/register', userController.showRegister);
 router.post('/register', validateRegisterForm, userController.register);
-router.get('/profile', userController.profile);
+router.get('/profile/:id?', userController.profile);
 router.get('/editProfile', userController.editProfile);
 router.post("/logout", userController.logout);
 

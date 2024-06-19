@@ -62,20 +62,59 @@ const userController = {
     },
     
     profile: function(req, res) { 
-        let id = 1;
-        let usuario = {};
+        let id = req.params.id;
+
+        if(id === undefined) {
+            User.findByPk(req.session.user.id, {
+                include: [{
+                    association: 'productos_usuario'
+                }]
+            })
+                .then(function(response) {
+                    //res.send(response)
+                    return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
+
+                })
+                .catch(function(error) {
+                    return res.send(error)
+                })
+        }else {
+            User.findByPk(req.session.user.id, {
+                include: [{
+                    association: 'productos_usuario'
+                }]
+            })
+                .then(function(response) {
+                    if(response === null) {
+                        res.render('error', {})
+                    }
+                    //res.send(response)
+                    return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
+
+                })
+                .catch(function(error) {
+                    return res.send(error)
+                })
+        }
+
+        // console.log(id);
+
+        // res.send(id)
+        
+        // let id = 1;
+        // let usuario = {};
     
-        for (let i = 0; i < moduloDatos.usuarios.length; i++){
-            if (moduloDatos.usuarios[i].id == id){
-                usuario = moduloDatos.usuarios[i]
-            }
-        }
-        let publicaciones = [];
-        for (let i = 0; i < moduloDatos.productos.length; i++){
-            if (moduloDatos.productos[i].idUsuario == id){
-                publicaciones.push(moduloDatos.productos[i])
-            }
-        }
+        // for (let i = 0; i < moduloDatos.usuarios.length; i++){
+        //     if (moduloDatos.usuarios[i].id == id){
+        //         usuario = moduloDatos.usuarios[i]
+        //     }
+        // }
+        // let publicaciones = [];
+        // for (let i = 0; i < moduloDatos.productos.length; i++){
+        //     if (moduloDatos.productos[i].idUsuario == id){
+        //         publicaciones.push(moduloDatos.productos[i])
+        //     }
+        // }
 
         return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
     },
