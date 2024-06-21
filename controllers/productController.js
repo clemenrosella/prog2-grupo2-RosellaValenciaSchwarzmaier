@@ -6,31 +6,20 @@ const { validationResult } = require("express-validator");
 const productController = {
 
     product: function(req,res){
-        // let id = req.params.id;
-
-        // let productos = moduloDatos.productos;
-        // let productoEncontrado= {};
-
-        // for (let i = 0; i< productos.length; i++){
-        //     if (productos[i].id == id){
-        //         productoEncontrado = productos[i];
-        //     }
-        // }
-
-        // res.render('product', { producto : productoEncontrado}); --> ya no necesitamos esto. 
-
         let id = req.params.id;
+        
         Product.findByPk(id, {
             include: [
-            //     {association: "comentarios_producto",
-            //         include: [
-            //             {association: "comentarios_usuario"}
-            //         ]
-            // },
-            //     {association: "usuario_producto"},
+                {association: "comentarios_producto",
+                    include: [
+                        {association: "usuario_comentario"}
+                    ]
+            },
+                {association: "usuario_producto"},
             ]
         })
         .then(function (product) {
+            // return res.send(product)
             return res.render ("product", {producto: product})
         })
         .catch(function (error) {

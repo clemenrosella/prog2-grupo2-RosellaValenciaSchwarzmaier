@@ -29,19 +29,19 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= producto.imagen %>" alt="" class="product-detail-img"> 
+					<img src="/images/products/<%= producto.imagen %>" alt="" class="product-detail-img"> 
 					<p class="product-detail-description">
 						<%= producto.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
+						<% for (let i = 0; i < producto.comentarios_producto.length; i++) { %>  <!-- cambio todos los lugares donde tenia comentario por comentarios_producto-->
 							<article>
-								<img src= "/images/users/<%= producto.comentarios[i].foto_Perfil%>" alt=> 
+								<img src= "/images/users/<%= producto.comentarios_producto[i].usuario_comentario.foto_de_perfil%>" alt=> <!-- foto_Perfil no va mas. pongo usuario_comentario.foto_de_perfil  -->  
 								<div class="data">
 									<p class="user">
-										<strong> <a href="/user/profile%>"> <%= producto.comentarios[i].nombreUsuario%> </a> </strong> 
-										<%= producto.comentarios[i].texto %>
+										<strong> <a href="/user/profile%>"> <%= producto.comentarios_producto[i].usuario_comentario.email%> </a> </strong>  <!-- nombreUsuario no va mas. pongo usuario_comentario.email  -->
+										<%= producto.comentarios_producto[i].texto_comentario %> 
 									</p>
 								</div>
 							</article>
@@ -53,14 +53,14 @@
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
+					<form class="form" action="/product/eliminar/<%= producto.id %>" method="post">
+						<button type="submit" class="buy-now-button">ELIMINAR PRODUCTO</button>
+					</form>
 					<hr>
 				</div>
 			</div>
 		</div>
 	</div>
-	<form class="form" action="/product/eliminar/<%= producto.id %>" method="post">
-		<button type="submit">Eliminar publicación</button>
-	</form>
 
 	
 
