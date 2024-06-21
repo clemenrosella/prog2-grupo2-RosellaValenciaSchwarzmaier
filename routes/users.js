@@ -32,7 +32,7 @@ const validateLoginForm = [
     .custom(function (value, {req}) {
         return db.User.findOne({
             where: {
-                usuario : value
+                email : value
             }
         })
         .then(function (user) {
@@ -51,7 +51,7 @@ const validateLoginForm = [
     .custom(function (value, {req}) {
         return db.User.findOne({
             where: {
-                usuario : value
+                contraseña : value
             }
         })
         .then(function(response) {
@@ -70,7 +70,8 @@ router.post('/login', validateLoginForm, userController.login);
 router.get('/register', userController.showRegister);
 router.post('/register', validateRegisterForm, userController.register);
 router.get('/profile/:id?', userController.profile);
-router.get('/editProfile', userController.editProfile);
+router.get('/editProfile', userController.showEditProfile);
+router.post('/editProfile', userController.editProfile);
 router.post("/logout", userController.logout);
 
 module.exports = router;

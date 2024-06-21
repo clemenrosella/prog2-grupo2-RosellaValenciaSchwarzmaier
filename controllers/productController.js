@@ -1,4 +1,3 @@
-//const moduloDatos = require("../db/index"); //--> esto ya no lo necesito. 
 const db = require("../database/models");
 const Product = db.Product;
 const { validationResult } = require("express-validator");
@@ -54,7 +53,7 @@ const productController = {
     showProductEdit: function (req,res) {
        
         if (!req.session.user){
-            return res.redirect("/login");
+            return res.redirect("/user/login");
         } else{
             let id= req.params.id;
 

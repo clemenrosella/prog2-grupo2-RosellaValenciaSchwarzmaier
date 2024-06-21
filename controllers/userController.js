@@ -148,10 +148,27 @@ const userController = {
 
         return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
     },
-    editProfile: function(req, res) {
-        let usuario= moduloDatos.usuarios[0];
-        return res.render('profile-edit', {usuario:usuario});
+    showEditProfile: function(req, res) {
+        if(!req.session.user) {
+            return res.redirect("/user/login")
+        } else{
+            return res.render('profile-edit', {usuario:usuario});
+        }
     },
+
+    
+    editProfile: function(req, res) {
+        let user = req.body;
+        User.update(user)
+            .then(function(response) {
+                return res.redirect("/user")
+            })
+            .catch(function(error){
+                return res.send(error)
+            }) 
+                
+    },
+
     logout: function (req,res) {
         req.session.destroy();
         res.clearCookie("usuarioId");
