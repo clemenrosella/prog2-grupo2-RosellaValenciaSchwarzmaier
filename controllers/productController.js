@@ -1,6 +1,7 @@
 const db = require("../database/models");
 const Product = db.Product;
 const User = db.User;
+const Op = db.Sequelize.Op;
 const { validationResult } = require("express-validator");
 
 const productController = {
@@ -128,9 +129,31 @@ const productController = {
    },
 
    buscador: function (req,res) {
-        let bsuqueda= req.params.search;
-        
-   }
+        let busqueda= req.params.search;
+
+        Product.findAll({
+            where: {
+                [Op.or]:
+                [{nombre: {[Op.like]: "%"+ {busqueda} + "%"}},
+                {descripcion:{[Op.like]: "%" + {busqueda} + "%"}}
+            ]},
+            include:  [
+                {association: "comentarios_producto",
+                    include: [
+                        {association: "usuario_comentario"}
+                    ]
+            },
+                {association: "usuario_producto"},
+            ],
+            order: [['createdAt', 'DESC']]
+        })
+        .then(function(response){
+            res.render('search-results', {productos: response});
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+    },
 
 };
 
