@@ -36,6 +36,7 @@
 							<article class="product-box_data">
 								<h2><%= novedades[i].nombre %></h2>
 								<p><%= novedades[i].descripcion %></p>
+								<p><%= novedades[i].usuario_producto.email %></p>
 								<p>Comentarios: <%= novedades[i].comentarios_producto.length %></p>
 							</article>
 						</a>
@@ -81,6 +82,7 @@
 							<article class="product-box_data">
 								<h2><%= masComentados[i].nombre %></h2>
 								<p><%= masComentados[i].descripcion %></p>
+								<p><%= masComentados[i].usuario_producto.email %></p>
 								<p>Comentarios: <%= masComentados[i].comentarios_producto.length %></p>
 							</article>
 						</a>

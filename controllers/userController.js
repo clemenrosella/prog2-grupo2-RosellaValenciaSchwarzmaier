@@ -65,18 +65,20 @@ const userController = {
         let id = req.params.id;
 
         if(id === undefined || id === req.session.user.id) { // id == undefined 
-             {
-            User.findByPk(req.session.user.id, {
-                include: [{
-                    association: 'productos_usuario', include: [
+            
+            User.findByPk(1, {
+                include: [
+                    {
+                    association: 'productos_usuario', 
+                    include: [
                         {
                             association: 'comentarios_producto'
                 }
             ]
                 }],
-                order: [['updated_at', 'DESC']]
+                order: [['updatedAt', 'DESC']]
             })
-                .then(function(response) {
+            .then(function(response) {
                     let objUsuario = {
                         id: response.id,
                         email: response.email,
@@ -85,14 +87,14 @@ const userController = {
                         fotoPerfil: response.foto_de_perfil
                     }
                     //res.send(response)
-                    return res.render('profile', { usuario: usuario, publicaciones: response.productos_usuario, miPerfil: false });
+                    return res.render('profile', { usuario: objUsuario, publicaciones: response.productos_usuario, miPerfil: false });
 
                 })
                 .catch(function(error) {
                     return res.send(error)
                 })
-        }}else {
-            User.findByPk(req.session.user.id, {
+        }else {
+            User.findByPk(id, {
                 include: [
                     {
                         association: 'productos_usuario', include: [
@@ -102,7 +104,7 @@ const userController = {
                 ]
             }
                 ],
-                order: [['updated_at', 'DESC']]
+                order: [['updatedAt', 'DESC']]
             })
                 .then(function(response) {
                     if(response === null) {
@@ -146,7 +148,7 @@ const userController = {
         //     }
         // }
 
-        return res.render('profile', { usuario: usuario, publicaciones: publicaciones });
+       // return res.render('profile', { usuario: objUsuario, publicaciones: publicaciones });
     },
     showEditProfile: function(req, res) {
         if(!req.session.user) {

@@ -10,8 +10,10 @@ const indexController = {
 
         Product.findAll({
             include: [
+                {association: 'usuario_producto'},
                 {association: 'comentarios_producto'}
-            ]
+            ],
+            order: [['updatedAt', 'DESC']]
         })
         .then(function(productos){
             res.render('index', {novedades: productos, masComentados: productos});
