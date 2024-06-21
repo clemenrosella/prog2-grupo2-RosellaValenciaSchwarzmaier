@@ -1,5 +1,6 @@
 const db = require("../database/models");
 const Product = db.Product;
+const User = db.User;
 const { validationResult } = require("express-validator");
 
 const productController = {
@@ -27,8 +28,20 @@ const productController = {
     },
 
     showProductAdd: function(req,res){
-        let usuario= moduloDatos.usuarios[0];
-        res.render('product-add',  {usuario:usuario, errores:[]});
+        // let usuario= moduloDatos.usuarios[0];
+        
+        if (!req.session.user){
+            return res.redirect("/user/login");
+        } else{
+            User.findByPk(req.session.user.id)
+                .then(function (response) {
+                    res.render('product-add',  {usuario: response, errores:[]});
+                })
+                .catch(function (error) {
+                    res.send(error)
+                })
+        }
+
     },
 
     productAdd: function(req,res){
@@ -37,6 +50,7 @@ const productController = {
 
         if (errors.isEmpty()){
             let producto= req.body; 
+            producto.id_usuario= req.session.user.id;
 
             Product.create(producto)
                 .then(function (response) {
@@ -92,20 +106,31 @@ const productController = {
     },
     
    productDelete: function (req, res) {
-        let id = req.params.id;
-        Product.destroy({
-            where:{
-                id: id
-            }
-
-        })
-        .then(function (response) {
-            return res.redirect("/")    
-        })
-        .catch(function (error){
-            res.send(error)
-        })
+        let errors = validationResult(req);
+        
+        if (errors.isEmpty()){
+            let id = req.params.id;
+            
+            Product.destroy({
+                where:{
+                    id: id
+                }
+            })
+            .then(function (response) {
+                return res.redirect("/")
+            })
+            .catch(function (error) {
+                res.send(error)
+            })
+        }else{
+            res.render("product", {errores:errors})
+        }
    },
+
+   buscador: function (req,res) {
+        let bsuqueda= req.params.search;
+        
+   }
 
 };
 
