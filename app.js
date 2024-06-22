@@ -34,10 +34,10 @@ app.use(function(req, res, next){
 
   if(req.cookies.usuarioId != undefined && req.session.user ==undefined) {
     User.findByPk(req.cookies.usuarioId)
-    .then(function (response) {
-      req.session.user = response.email;
-      res.locals.user = req.session.user;
-    })
+      .then(function (response) {
+        req.session.user = response.email;
+        res.locals.user = req.session.user;
+      })
   }
 
   return next();

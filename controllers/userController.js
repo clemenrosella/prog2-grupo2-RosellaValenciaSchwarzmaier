@@ -87,7 +87,7 @@ const userController = {
                         fotoPerfil: response.foto_de_perfil
                     }
                     //res.send(response)
-                    return res.render('profile', { usuario: objUsuario, publicaciones: response.productos_usuario, miPerfil: false });
+                    return res.render('profile', { usuario: objUsuario, publicaciones: response.productos_usuario, miPerfil: true });
 
                 })
                 .catch(function(error) {
