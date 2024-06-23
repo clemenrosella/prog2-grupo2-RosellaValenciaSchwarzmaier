@@ -1,13 +1,17 @@
-//const moduloDatos = require("../db/index");
-
 const bcrypt = require('bcryptjs')
 const db = require("../database/models");
-const {validationResult} = require('express-validator');
+
 const User = db.User;
+
+const { validationResult } = require('express-validator');
 
 const userController = {
     showLogin: function(req, res) {
-        return res.render('login');
+        if(req.session.user){
+            return res.redirect("/user/profile/" + req.session.user.id)
+        } else {
+            return res.render('login', {errors: []});
+        }
     },
 
     login: function(req, res){
@@ -27,14 +31,14 @@ const userController = {
                     };
                     return res.redirect('/user/profile/' + response.id);
                 })
-                .catch(function(error) {
-                    console.log(error)
+                .catch(function (error) {
+                    errors.errors.push(error)
+                    return res.render('login', { errors: errors.errors })
                 })
-
-        } else{
-            res.render('login', ({errors: errors.mapped()}, {old: req.body}));
-        }
-    },
+            } else {
+                return res.render('login', { errors: errors.errors })
+            }
+        },        
 
     showRegister: function(req, res) {
         return res.render('register');
@@ -152,13 +156,14 @@ const userController = {
         if(!req.session.user) {
             return res.redirect("/user/login")
         } else{
-            User.findByPk(req.session.user.id)
-            .then(function (response) {
-                return res.render('profile-edit', {usuario: response, errores:[]});
-            })
-            .catch(function (error) {
-                res.send(error)
-            })
+            // User.findByPk(req.session.user.id)
+            // .then(function (response) {
+            //     return res.render('profile-edit', {usuario: response, errores:[]});
+            // })
+            // .catch(function (error) {
+            //     res.send(error)
+            // })
+            return res.render('profile-edit', { errors: [] });
         }
     },
 
@@ -169,17 +174,15 @@ const userController = {
         if(errors.isEmpty()){
             let user = req.body;
 
-            user.id_usuario = req.session.user.id;
-
             User.update(user)
             .then(function(response) {
-                return res.redirect("/user")
+                return res.redirect("/user/profile" + req.session.user.id)
             })
             .catch(function(error){
-                return res.send(error)
+                return res.render("profile-edit", { errores: errors })
             }) 
         }else{
-            res.render("profile-edit", {errores: errors})
+            return res.render("profile-edit", { errores: errors.errors })
         }
                 
     },
