@@ -18,20 +18,20 @@
 			<!-- Show the "ultimos" products -->
 			<!--<h2 class="col-12" id="agregarProd">Agregar Producto</h2> -->
 
-                <form action="/product/edit/<%= producto.id%>" method="POST" class="clase-productadd">
+                <form action="/product/edit/<%= producto.id%>" method="POST" class="form col-6">
                     <div class="form-group">
-                        <label for="nombre">Ingrese cambios en el nombre del producto:</label>
-                        <input type="text" id="nombre" name="nombre" class="form-control" required>
+                        <label class="form-label" for="imagen">Ingrese el nombre de la nueva imagen:</label>
+                        <input type="text" name="imagen" class="form-input" placeholder="Ingrese el nombre de su imagen">
                     </div>
-                    <div class="form-group">
-                        <label for="descripcion">Ingrese cambios en la descripción del producto:</label>
-                        <input type="text" id="descripcion" name="descripcion" class="form-control" required>
+                    <div>
+                        <label class="form-label" for="nombre">Ingrese cambios en el nombre del producto:</label>
+                        <input type="text" name="nombre" class="form-input" placeholder="Ingrese el nombre del producto">
                     </div>
-                    <div class="form-group">
-                        <label for="precio">Ingrese cambios en el precio del producto:</label>
-                        <input type="number" id="precio" name="precio" class="form-control" step="0.01" required>
+                    <div>
+                        <label class="form-label" for="descripcion">Ingrese cambios en la descripción del producto:</label>
+                        <input type="text" name="descripcion" class="form-input" placeholder="Ingrese la descripcion del producto">
                     </div>
-                    <button type="submit" class="btn btn-primary">Editar Producto</button>
+                    <button type="submit" class="buy-now-button">Editar Producto</button>
                 </form>
         </div>
     </div>

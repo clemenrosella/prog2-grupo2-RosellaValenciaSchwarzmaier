@@ -119,14 +119,21 @@ const productController = {
                     id: id
                 }
             })
+            // Comment.destroy({
+            //     where: {
+            //         id_producto: id
+            //     }
+            // })
             .then(function (response) {
                 return res.redirect("/")
             })
             .catch(function (error) {
+                //errors.errors.push(error)
+                //return res.render("product", { errores: errors.errors })
                 res.send(error)
             })
         }else{
-            res.render("product", {errores:errors})
+            return res.render("product", { errores: errors.errors})
         }
    },
 
