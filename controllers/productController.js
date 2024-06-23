@@ -35,13 +35,14 @@ const productController = {
         if (!req.session.user){
             return res.redirect("/user/login");
         } else{
-            User.findByPk(req.session.user.id)
-                .then(function (response) {
-                    res.render('product-add',  {usuario: response, errores:[]});
-                })
-                .catch(function (error) {
-                    res.send(error)
-                })
+            // User.findByPk(req.session.user.id)
+            //     .then(function (response) {
+            //         res.render('product-add',  {usuario: response, errores:[]});
+            //     })
+            //     .catch(function (error) {
+            //         res.send(error)
+            //     })
+            res.render('product-add',  {usuario: response, errores:[]});
         }
 
     },
@@ -56,13 +57,13 @@ const productController = {
 
             Product.create(producto)
                 .then(function (response) {
-                    res.redirect("/")
+                    return res.redirect("/product/" + response.id)
                 })
                 .catch(function (error) {
-                    res.send(error)
+                    return res.send(error)
                 })
         }else{
-            res.render("product-add", {errores:errors})
+            res.render("product-add", {errores: errors.errors})
         }
     },
 
@@ -76,13 +77,13 @@ const productController = {
         Product.findByPk(id)
         .then(function(response){
             if (response !== null){
-                res.render("product-edit", {producto: response})
+                res.render("product-edit", {producto: response, errores: []})
             } else{
-                res.send("No se encontró el producto")
+                return res.redirect("/")
             }
         })
         .catch(function(error){
-            res.send(error)
+            return res.send(error)
         })
         }
         
@@ -97,10 +98,10 @@ const productController = {
             
             Product.update(producto)
             .then(function (response) {
-                res.redirect("/")
+                return res.redirect("/product/" + req.params.id)
             })
             .catch(function (error) {
-                res.send(error)
+                return res.send(error)
             })
         }else{
             res.render("product-edit", {errores:errors})
@@ -157,9 +158,11 @@ const productController = {
             res.render('search-results', {productos: response});
         })
         .catch(function(error){
-            console.log(error);
+            //console.log(error);
+            return res.send(error)
         })
     },
+
     comentarioAdd: function (req,res) {
         let errors = validationResult(req);
 
