@@ -49,13 +49,17 @@
 						
 
 					</section>
-					<form class="form" action="" method="GET">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
-					<form class="form" action="/product/eliminar/<%= producto.id %>" method="post">
-						<button type="submit" class="buy-now-button">ELIMINAR PUBLICACIÓN</button>
-					</form>
+					<% if (user != null) { %>
+						<form class="form" action="/product/agregar-comentario/<%= producto.id %>" method="GET">
+							<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+						<form class="form" action="/product/eliminar/<%= producto.id %>" method="post">
+							<button type="submit" class="buy-now-button">ELIMINAR PUBLICACIÓN</button>
+						</form>
+					<% } else { %> 
+						<p>Debes estar logueado para comentar.</p>
+					<% } %>
 					<hr>
 				</div>
 			</div>

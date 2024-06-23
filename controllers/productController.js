@@ -1,6 +1,7 @@
 const db = require("../database/models");
 const Product = db.Product;
 const User = db.User;
+const Comment = db.Comment;
 const Op = db.Sequelize.Op;
 const { validationResult } = require("express-validator");
 
@@ -159,6 +160,44 @@ const productController = {
             console.log(error);
         })
     },
+    comentarioAdd: function (req,res) {
+        let errors = validationResult(req);
+
+        let id = req.params.id;
+        
+        Product.findByPk(id, {
+            include: [
+                {association: "comentarios_producto",
+                    include: [
+                        {association: "usuario_comentario"}
+                    ]
+            },
+                {association: "usuario_producto"},
+            ]
+        })
+        .then(function (product) {
+            if (errors.isEmpty()){
+                Comment.create({
+                    texto_comentario: req.body.comentario,
+                    id_usuario: req.session.user.id,
+                    id_producto: req.params.id
+                })
+                    .then(function (response) {
+                        res.redirect("/product/"+ req.params.id)
+                    })
+                    .catch(function (error) {
+                        res.render("product", { producto: product, errors : error })
+                    })
+            } else {
+                console.log(errors)
+                res.render("product", { producto: product, errors : errors.errors })
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+    }
 
 };
 

@@ -18,6 +18,12 @@ let editValidations= [
     body("precio").notEmpty().isNumeric().withMessage(""),
 ];
 
+let comentarioValidations= [
+    body("comentario")
+        .notEmpty().withMessage("Debe completar el campo de comentario").bail()
+        .isLength({min: 3}).withMessage("El comentario debe tener al menos 3 caracteres"),
+];
+
 router.get("/add", productController.showProductAdd);
 router.post("/add", addValidations, productController.productAdd);
 
@@ -25,6 +31,7 @@ router.get("/buscar", productController.buscador);
 
 router.get("/:id", productController.product);
 
+router.post("/agregar-comentario/:id", comentarioValidations, productController.comentarioAdd)
 router.get("/edit/:id", editValidations, productController.showProductEdit);
 router.post("/edit/:id", productController.productEdit);
 

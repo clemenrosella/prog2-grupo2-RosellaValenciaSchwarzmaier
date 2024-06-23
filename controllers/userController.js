@@ -44,12 +44,12 @@ const userController = {
 
         if(errors.isEmpty()) {
             db.User.create({
-                email_usuario: req.body.email,
-                nombre_usuario: req.body.usuario,
-                contraseña_usuario: bcrypt.hashSync(req.body.contraseña, 10),
-                fecha_usuario: req.body.fecha_nacimiento,
-                dni_usuario: req.body.nro_documento,
-                foto_usuario: req.body.foto_perfil,
+                email: req.body.email,
+                nombre: req.body.usuario,
+                contraseña: bcrypt.hashSync(req.body.contraseña, 10),
+                fecha: req.body.fecha_nacimiento,
+                dni: req.body.nro_documento,
+                foto_de_perfil: req.body.foto_perfil,
 
             });
             return res.redirect("/");

@@ -43,8 +43,7 @@ const validateLoginForm = [
         .catch(function (e) {
             console.log(e)
         })
-    }
-),
+    }),
 
     body('contraseña').notEmpty().withMessage('Debes completar el campo de contraseña')
     .isLength({min: 4}).withMessage('La contraseña debe tener al menos 4 caracteres.')
