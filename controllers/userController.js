@@ -64,7 +64,7 @@ const userController = {
 
         if(id === undefined || id === req.session.user.id) { // id == undefined 
             
-            User.findByPk(1, {
+            User.findByPk(id, {
                 include: [
                     {
                     association: 'productos_usuario', 
@@ -152,7 +152,13 @@ const userController = {
         if(!req.session.user) {
             return res.redirect("/user/login")
         } else{
-            return res.render('profile-edit', {usuario:usuario});
+            User.findByPk(req.session.user.id)
+            .then(function (response) {
+                return res.render('profile-edit', {usuario: response, errores:[]});
+            })
+            .catch(function (error) {
+                res.send(error)
+            })
         }
     },
 

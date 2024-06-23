@@ -32,7 +32,7 @@ const validateLoginForm = [
     .custom(function (value, {req}) {
         return db.User.findOne({
             where: {
-                usuario : value
+                email : value
             }
         })
         .then(function (user) {
@@ -51,7 +51,7 @@ const validateLoginForm = [
     .custom(function (value, {req}) {
         return db.User.findOne({
             where: {
-                usuario : value
+                email : req.body.usuario
             }
         })
         .then(function(response) {

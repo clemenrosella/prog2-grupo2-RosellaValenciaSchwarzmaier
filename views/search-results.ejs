@@ -7,7 +7,12 @@
 <body>
 	<!-- Header -->
 	
-	<%- include('./partials/headerDesLogueado') %>
+	<% if (user !== null) { %>
+		<%- include('./partials/headerLogueado') %>
+
+	<% } else{ %>
+		<%- include('./partials/headerDesLogueado') %>
+	<% } %>
 
 	<!-- /Header -->
 
@@ -30,6 +35,7 @@
 								<article class="product-box_data">
 									<h2><%= productos[i].nombre %></h2>
 									<p><%= productos[i].descripcion %></p>
+									<p><%= productos[i].usuario_producto.email %></p>
 									<p>Comentarios: <%= productos[i].comentarios_producto.length %></p>
 								</article>
 							</a>

@@ -8,13 +8,12 @@
 <body>
 	<!-- Header -->
 
-	<% if (locals.user) { %>
+	<% if (user !== null) { %>
 		<%- include('./partials/headerLogueado') %>
 
 	<% } else{ %>
 		<%- include('./partials/headerDesLogueado') %>
 	<% } %>
-
 	<!-- /Header -->
 
 
