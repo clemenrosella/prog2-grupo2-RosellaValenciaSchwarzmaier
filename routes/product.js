@@ -21,6 +21,8 @@ let editValidations= [
 router.get("/add", productController.showProductAdd);
 router.post("/add", addValidations, productController.productAdd);
 
+router.get("/buscar", productController.buscador);
+
 router.get("/:id", productController.product);
 
 router.get("/edit/:id", editValidations, productController.showProductEdit);
@@ -28,6 +30,5 @@ router.post("/edit/:id", productController.productEdit);
 
 router.post("/eliminar/:id", productController.productDelete);
 
-// router.get("/buscar", productController.buscador);
 
 module.exports = router;

@@ -129,14 +129,19 @@ const productController = {
    },
 
    buscador: function (req,res) {
-        let busqueda= req.params.search;
+        let busqueda= req.query.search;
 
         Product.findAll({
             where: {
-                [Op.or]:
-                [{nombre: {[Op.like]: "%"+ {busqueda} + "%"}},
-                {descripcion:{[Op.like]: "%" + {busqueda} + "%"}}
-            ]},
+                [Op.or]: [
+                    {
+                        nombre: { [Op.like]: "%" + busqueda + "%"}
+                    },
+                    {
+                        descripcion: { [Op.like]: "%" + busqueda + "%"}
+                    },
+                ]
+            },
             include:  [
                 {association: "comentarios_producto",
                     include: [
