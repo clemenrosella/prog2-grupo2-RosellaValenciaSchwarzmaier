@@ -164,14 +164,23 @@ const userController = {
 
     
     editProfile: function(req, res) {
-        let user = req.body;
-        User.update(user)
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+            let user = req.body;
+
+            user.id_usuario = req.session.user.id;
+
+            User.update(user)
             .then(function(response) {
                 return res.redirect("/user")
             })
             .catch(function(error){
                 return res.send(error)
             }) 
+        }else{
+            res.render("profile-edit", {errores: errors})
+        }
                 
     },
 
