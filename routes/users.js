@@ -32,7 +32,7 @@ const validateLoginForm = [
     .custom(function (value, {req}) {
         return db.User.findOne({
             where: {
-                email : value
+                usuario : value
             }
         })
         .then(function (user) {
@@ -43,14 +43,15 @@ const validateLoginForm = [
         .catch(function (e) {
             console.log(e)
         })
-    }),
+    }
+),
 
     body('contraseña').notEmpty().withMessage('Debes completar el campo de contraseña')
     .isLength({min: 4}).withMessage('La contraseña debe tener al menos 4 caracteres.')
     .custom(function (value, {req}) {
         return db.User.findOne({
             where: {
-                email : req.body.usuario
+                usuario : value
             }
         })
         .then(function(response) {
@@ -58,9 +59,7 @@ const validateLoginForm = [
                 throw new Error('La contraseña es incorrecta')
             }
         })
-        .catch(function (error) {
-            console.log(error)
-        })
+
     }),
 ];
 
