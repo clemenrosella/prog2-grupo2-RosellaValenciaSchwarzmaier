@@ -42,7 +42,7 @@ const productController = {
             //     .catch(function (error) {
             //         res.send(error)
             //     })
-            res.render('product-add',  {usuario: response, errores:[]});
+            res.render('product-add',  { errores:[]});
         }
 
     },
@@ -159,7 +159,7 @@ const productController = {
         })
         .catch(function(error){
             //console.log(error);
-            return res.send(error)
+            return res.send(error);
         })
     },
 
