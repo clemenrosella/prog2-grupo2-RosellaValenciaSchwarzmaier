@@ -51,7 +51,7 @@ const validateLoginForm = [
     .custom(function (value, {req}) {
         return db.User.findOne({
             where: {
-                contraseña : value
+                email : req.body.usuario
             }
         })
         .then(function(response) {
@@ -59,7 +59,9 @@ const validateLoginForm = [
                 throw new Error('La contraseña es incorrecta')
             }
         })
-
+        .catch(function (error) {
+            console.log(error)
+        })
     }),
 ];
 

@@ -14,24 +14,22 @@ const userController = {
         let errors = validationResult(req);
         
         if(errors.isEmpty()){
-            //Procesamos el controlador normalmente
+            
             User.findOne({
-                where: [{email : req.body.email }]
-            })
-
-            .then(function (response) {
-                req.session.user = {
-                    usuario: response.usuario,
-                    contraseña: response.contraseña
+                where: {
+                    email : req.body.usuario
                 }
-                if (req.body.recordarme){
-                    res.cookie('usuarioId', response.id, {maxAge: 1000 * 60 * 30})
-                };
-                return res.redirect('/');
             })
-            .catch(function(error) {
-                console.log(error)
-            })
+                .then(function (response) {
+                    req.session.user = response
+                    if (req.body.recordarme){
+                        res.cookie('usuarioId', response.id, { maxAge: 1000 * 60 * 30 })
+                    };
+                    return res.redirect('/user/profile/' + response.id);
+                })
+                .catch(function(error) {
+                    console.log(error)
+                })
 
         } else{
             res.render('login', ({errors: errors.mapped()}, {old: req.body}));
