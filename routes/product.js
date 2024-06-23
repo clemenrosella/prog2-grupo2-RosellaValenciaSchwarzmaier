@@ -31,7 +31,8 @@ router.get("/buscar", productController.buscador);
 
 router.get("/:id", productController.product);
 
-router.post("/agregar-comentario/:id", comentarioValidations, productController.comentarioAdd)
+router.post("/agregar-comentario/:id", comentarioValidations, productController.comentarioAdd);
+
 router.get("/edit/:id", editValidations, productController.showProductEdit);
 router.post("/edit/:id", productController.productEdit);
 
