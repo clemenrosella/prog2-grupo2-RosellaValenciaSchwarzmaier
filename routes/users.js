@@ -55,9 +55,13 @@ const validateLoginForm = [
             }
         })
         .then(function(response) {
+            //console.log(response)
             if(response && !bcrypt.compareSync(value, response.contraseña)){
                 throw new Error('La contraseña es incorrecta')
             }
+        })
+        .catch(function(error) {
+            console.log(error)
         })
 
     }),
