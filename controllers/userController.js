@@ -41,95 +41,65 @@ const userController = {
         },        
 
     showRegister: function(req, res) {
-        return res.render('register');
+        if (req.session.user) {
+            return res.redirect("/user/profile/" + req.session.user.id)
+        } else {
+            return res.render('register', {errors: []});
+        } 
     },
     register: function(req, res){ 
         let errors= validationResult(req);
 
         if(errors.isEmpty()) {
-            db.User.create({
-                email: req.body.email,
-                nombre: req.body.usuario,
-                contraseña: bcrypt.hashSync(req.body.contraseña, 10),
-                fecha: req.body.fecha_nacimiento,
-                dni: req.body.nro_documento,
-                foto_de_perfil: req.body.foto_perfil,
-
-            });
-            return res.redirect("/");
-        }else {
-
-            return res.render("register", {errors: errors.mapped()}, {old:req.body});
+            let nuevo_usuario = req.body;
+            nuevo_usuario.contraseña = bcrypt.hashSync(nuevo_usuario.contraseña, 10);
+            User.create(nuevo_usuario)
+                .then(function (response) {
+                    return res.redirect("/user/login");
+                })
+                .catch(function (error) {
+                    errors.errors.push(error)
+                    return res.render("register", { errors: errors.errors });
+                })
+        } else {
+            return res.render("register", { errors: errors.errors });
         }
     },
     
     profile: function(req, res) { 
         let id = req.params.id;
 
-        if(id === undefined || id === req.session.user.id) { // id == undefined 
-            
-            User.findByPk(id, {
+        if(id === undefined){
+            if (req.session.user) {
+                id = req.session.user.id;
+            } else {
+                return res.redirect('/user/login')
+            }
+        }
+        
+        User.findByPk(id, {
                 include: [
                     {
                     association: 'productos_usuario', 
                     include: [
                         {
                             association: 'comentarios_producto'
-                }
-            ]
-                }],
-                order: [['updatedAt', 'DESC']]
-            })
-            .then(function(response) {
-                    let objUsuario = {
-                        id: response.id,
-                        email: response.email,
-                        fecha: response.fecha,
-                        dni: response.dni,
-                        fotoPerfil: response.foto_de_perfil
+                            }
+                        ]
                     }
-                    //res.send(response)
-                    return res.render('profile', { usuario: objUsuario, publicaciones: response.productos_usuario, miPerfil: true });
-
-                })
-                .catch(function(error) {
-                    return res.send(error)
-                })
-        }else {
-            User.findByPk(id, {
-                include: [
-                    {
-                        association: 'productos_usuario', include: [
-                            {
-                                association: 'comentarios_producto'
-                    }
-                ]
-            }
                 ],
                 order: [['updatedAt', 'DESC']]
             })
-                .then(function(response) {
-                    if(response === null) {
-                        res.send("El usuario solicitado no existe.")
-                        res.render('error', {error: {}, message: "Ususario no encontrado."})
-                    } else {
-                        let objUsuario = {
-                            id: response.id, 
-                            email: response.email,
-                            fecha: response.fecha,
-                            dni: response.dni,
-                            fotoPerfil: response.foto_de_perfil
-
-                        }
-                        
-                        return res.render('profile', { usuario: objUsuario, publicaciones: response.productos_usuario , miPerfil: false});
-                    }
-                    //res.send(response)
-                })
-                .catch(function(error) {
-                    return res.send(error)
-                })
-        }
+            .then(function(response) {
+                if (response) {
+                    return res.render('profile', { usuario: response, publicaciones: response.productos_usuario });
+                } else {
+                    return res.redirect('/')
+                }
+            })
+            .catch(function (error) {
+                return res.send(error)
+            })
 
         // console.log(id);
 
@@ -179,6 +149,7 @@ const userController = {
                 return res.redirect("/user/profile" + req.session.user.id)
             })
             .catch(function(error){
+                errors.push(error)
                 return res.render("profile-edit", { errores: errors })
             }) 
         }else{
