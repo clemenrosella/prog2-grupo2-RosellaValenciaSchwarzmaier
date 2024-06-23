@@ -35,7 +35,7 @@ app.use(function(req, res, next){
   if(req.cookies.usuarioId != undefined && req.session.user ==undefined) {
     User.findByPk(req.cookies.usuarioId)
       .then(function (response) {
-        req.session.user = response.email;
+        req.session.user = response;
         res.locals.user = req.session.user;
       })
   }
@@ -43,16 +43,14 @@ app.use(function(req, res, next){
   return next();
 }); 
 
-
 app.use(function(req, res, next) {
   res.locals.user = null
 
-  if (res.locals.user != undefined) {
+  if (req.session.user != undefined) {
     res.locals.user = req.session.user
   }
   return next();
 })
-
 
 
 app.use('/', indexRouter);
