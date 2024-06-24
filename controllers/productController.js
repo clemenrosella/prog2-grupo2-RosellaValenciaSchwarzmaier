@@ -65,7 +65,7 @@ const productController = {
                     return res.send(error)
                 })
         }else{
-            //console.log(errors.errors);
+            console.log(errors.errors);
             return res.render("product-add", {errores: errors.errors})
         }
     },
