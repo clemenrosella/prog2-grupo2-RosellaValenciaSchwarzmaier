@@ -77,8 +77,8 @@ const productController = {
 
         Product.findByPk(id)
         .then(function(response){
-            if (response !== null){
-                res.render("product-edit", {producto: response, errores: []})
+            if (response && response.id_usuario == req.session.user.id) {
+                return res.render("product-edit", { id_producto : id, errores : [] })
             } else{
                 return res.redirect("/")
             }
