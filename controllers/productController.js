@@ -89,7 +89,6 @@ const productController = {
             return res.send(error)
         })
         }
-        
     },
 
     productEdit: function (req,res) {
@@ -99,15 +98,20 @@ const productController = {
             let producto = req.body;
             producto.id_usuario = req.session.user.id;
             
-            Product.update(producto)
+            Product.update(producto, {
+                where: {
+                    id: req.params.id
+                }
+            })
             .then(function (response) {
                 return res.redirect("/product/" + req.params.id)
             })
             .catch(function (error) {
-                return res.send(error)
+                errors.errors.push(error)
+                return res.render("product-edit", { id_producto: req.params.id, errores: errors.errors })
             })
         }else{
-            res.render("product-edit", {errores:errors})
+            res.render("product-edit", {id_producto: req.params.id, errores: errors.errors})
         }
     },
     
