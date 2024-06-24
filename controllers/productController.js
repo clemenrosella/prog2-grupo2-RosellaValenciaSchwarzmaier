@@ -48,7 +48,6 @@ const productController = {
     },
 
     productAdd: function(req,res){
-        //let usuario= moduloDatos.usuarios[0]; --> esto se saca. 
         let errors= validationResult(req);
 
         if (errors.isEmpty()){
@@ -63,6 +62,7 @@ const productController = {
                     return res.send(error)
                 })
         }else{
+            //console.log(errors.errors);
             res.render("product-add", {errores: errors.errors})
         }
     },
@@ -113,7 +113,6 @@ const productController = {
         
         if (errors.isEmpty()){
             let id = req.params.id;
-            
             Product.destroy({
                 where:{
                     id: id
@@ -136,7 +135,6 @@ const productController = {
             return res.render("product", { errores: errors.errors})
         }
    },
-
    buscador: function (req,res) {
         let busqueda= req.query.search;
 

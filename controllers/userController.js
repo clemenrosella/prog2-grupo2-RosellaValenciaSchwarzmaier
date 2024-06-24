@@ -88,7 +88,7 @@ const userController = {
                         ]
                     }
                 ],
-                order: [['updatedAt', 'DESC']]
+                order: [['productos_usuario', 'updatedAt', 'DESC']]
             })
             .then(function(response) {
                 if (response) {
