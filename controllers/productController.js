@@ -55,6 +55,8 @@ const productController = {
             let producto= req.body; 
             producto.id_usuario= req.session.user.id;
 
+            console.log(producto);
+
             Product.create(producto)
                 .then(function (response) {
                     return res.redirect("/product/" + response.id)
@@ -64,7 +66,7 @@ const productController = {
                 })
         }else{
             //console.log(errors.errors);
-            res.render("product-add", {errores: errors.errors})
+            return res.render("product-add", {errores: errors.errors})
         }
     },
 
