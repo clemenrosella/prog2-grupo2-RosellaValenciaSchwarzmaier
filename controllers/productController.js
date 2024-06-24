@@ -18,7 +18,8 @@ const productController = {
                     ]
             },
                 {association: "usuario_producto"},
-            ]
+            ],
+            order: [['comentarios_producto', 'createdAt', 'DESC']]
         })
         .then(function (product) {
             // return res.send(product)
@@ -113,10 +114,16 @@ const productController = {
         
         if (errors.isEmpty()){
             let id = req.params.id;
+            
             Product.destroy({
-                where:{
+                where: {
                     id: id
-                }
+                },
+                parent: Comment.destroy({ 
+                    where: {
+                        id_producto: id
+                    }
+                })
             })
             .then(function (response) {
                 return res.redirect("/")
