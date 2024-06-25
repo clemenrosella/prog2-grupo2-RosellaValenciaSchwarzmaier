@@ -22,7 +22,6 @@ const productController = {
             order: [['comentarios_producto', 'createdAt', 'DESC']]
         })
         .then(function (product) {
-            // return res.send(product)
             return res.render ("product", {producto: product})
         })
         .catch(function (error) {
@@ -31,21 +30,11 @@ const productController = {
     },
 
     showProductAdd: function(req,res){
-        // let usuario= moduloDatos.usuarios[0];
-        
         if (!req.session.user){
             return res.redirect("/user/login");
         } else{
-            // User.findByPk(req.session.user.id)
-            //     .then(function (response) {
-            //         res.render('product-add',  {usuario: response, errores:[]});
-            //     })
-            //     .catch(function (error) {
-            //         res.send(error)
-            //     })
             res.render('product-add',  { errores:[]});
         }
-
     },
 
     productAdd: function(req,res){
@@ -55,41 +44,39 @@ const productController = {
             let producto= req.body; 
             producto.id_usuario= req.session.user.id;
 
-            console.log(producto);
-
             Product.create(producto)
                 .then(function (response) {
                     return res.redirect("/product/" + response.id)
                 })
                 .catch(function (error) {
-                    return res.send(error)
+                    errors.errors.push(error)
+                    return res.render("product-add", { errores: errors.errors })
                 })
         }else{
             console.log(errors.errors);
-            return res.render("product-add", {errores: errors.errors})
+            return res.render("product-add", { errores: errors.errors })
         }
     },
 
     showProductEdit: function (req,res) {
-       
         if (!req.session.user){
             return res.redirect("/user/login");
         } else{
             let id= req.params.id;
 
-        Product.findByPk(id)
-        .then(function(response){
-            if (response && response.id_usuario == req.session.user.id) {
-                return res.render("product-edit", { id_producto : id, errores : [] })
-            } else{
-                return res.redirect("/")
-            }
-        })
-        .catch(function(error){
-            return res.send(error)
-        })
+            Product.findByPk(id)
+                .then(function (response) {
+                    if (response && response.id_usuario == req.session.user.id) {
+                        return res.render("product-edit", { id_producto: id, errores: [] })
+                    } else {
+                        return res.redirect("/product/" + id)
+                    }
+                })
+                .catch(function (error) {
+                    return res.send(error)
+                })
         }
-    },
+},
 
     productEdit: function (req,res) {
         let errors = validationResult(req);
@@ -103,15 +90,15 @@ const productController = {
                     id: req.params.id
                 }
             })
-            .then(function (response) {
-                return res.redirect("/product/" + req.params.id)
-            })
-            .catch(function (error) {
-                errors.errors.push(error)
-                return res.render("product-edit", { id_producto: req.params.id, errores: errors.errors })
-            })
-        }else{
-            res.render("product-edit", {id_producto: req.params.id, errores: errors.errors})
+                .then(function (response) {
+                    return res.redirect("/product/" + req.params.id)
+                })
+                .catch(function (error) {
+                    errors.errors.push(error)
+                    return res.render("product-edit", { id_producto: req.params.id, errores: errors.errors })
+                })
+        } else {
+            res.render("product-edit", { id_producto: req.params.id, errores: errors.errors })
         }
     },
     

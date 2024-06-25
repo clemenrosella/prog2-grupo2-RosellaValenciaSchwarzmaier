@@ -22,7 +22,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.nombre %></h2> 
 			<p class="product-detail-description">
-				<a href="/product/edit/<%= producto.id %>">Editar</a>  <!-- Esto tiene q redireccionar a product edit -->
+				<a href="/product/edit/<%= producto.id %>">Editar</a>  
 			</p>
 		</div>
 		<div class="product-detail">
@@ -34,12 +34,12 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i = 0; i < producto.comentarios_producto.length; i++) { %>  <!-- cambio todos los lugares donde tenia comentario por comentarios_producto-->
+						<% for (let i = 0; i < producto.comentarios_producto.length; i++) { %>  
 							<article>
-								<img src= "/images/users/<%= producto.comentarios_producto[i].usuario_comentario.foto_de_perfil%>" alt=> <!-- foto_Perfil no va mas. pongo usuario_comentario.foto_de_perfil  -->  
+								<img src= "/images/users/<%= producto.comentarios_producto[i].usuario_comentario.foto_de_perfil%>" alt=> 
 								<div class="data">
 									<p class="user">
-										<strong> <a href="/user/profile%>"> <%= producto.comentarios_producto[i].usuario_comentario.email%> </a> </strong>  <!-- nombreUsuario no va mas. -->
+										<strong> <a href="/user/profile/<%= producto.comentarios_producto[i].usuario_comentario.id %>"> <%= producto.comentarios_producto[i].usuario_comentario.email%> </a> </strong>  
 										<%= producto.comentarios_producto[i].texto_comentario %> 
 									</p>
 								</div>

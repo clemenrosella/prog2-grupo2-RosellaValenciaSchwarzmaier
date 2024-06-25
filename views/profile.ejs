@@ -26,12 +26,14 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%=usuario.email%>
-						<% if (user.id === usuario.id) {%>
-							<a href="/user/editProfile">
-								<i class="fas fa-cog"></i>
-							</a>
-						<% } else { %> 
-							<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+						<% if (user != undefined) { %>
+							<% if (user.id === usuario.id) {%>
+								<a href="/user/editProfile">
+									<i class="fas fa-cog"></i>
+								</a>
+							<% } else { %> 
+								<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+							<% } %> 
 						<% } %> 
 				</div>
 				<div>

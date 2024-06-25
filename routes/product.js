@@ -8,14 +8,14 @@ const { body } = require("express-validator");
 
 let addValidations= [
     body("nombre").notEmpty().withMessage("Debe completar el campo de nombre"),
-    body("descrpicion").notEmpty().withMessage("Debe completar el campo de descripcion"),
+    body("descripcion").notEmpty().withMessage("Debe completar el campo de descripcion"),
     body("imagen").notEmpty().withMessage("Debes cargar una imagen de tu producto"),
 ];
 
 let editValidations= [
     body("nombre").notEmpty().withMessage("Debe completar el campo de nombre"),
-    body("descrpicion").notEmpty().withMessage("Debe completar el campo de descripcion"),
-    body("precio").notEmpty().isNumeric().withMessage(""),
+    body("descripcion").notEmpty().withMessage("Debe completar el campo de descripcion"),
+    body("imagen").notEmpty().isNumeric().withMessage(""),
 ];
 
 let comentarioValidations= [

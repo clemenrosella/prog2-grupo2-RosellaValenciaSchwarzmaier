@@ -35,10 +35,10 @@ const userController = {
                     errors.errors.push(error)
                     return res.render('login', { errors: errors.errors })
                 })
-            } else {
-                return res.render('login', { errors: errors.errors })
-            }
-        },        
+        } else {
+            return res.render('login', { errors: errors.errors })
+        }
+    },         
 
     showRegister: function(req, res) {
         if (req.session.user) {
@@ -100,62 +100,40 @@ const userController = {
             .catch(function (error) {
                 return res.send(error)
             })
-
-        // console.log(id);
-
-        // res.send(id)
-        
-        // let id = 1;
-        // let usuario = {};
-    
-        // for (let i = 0; i < moduloDatos.usuarios.length; i++){
-        //     if (moduloDatos.usuarios[i].id == id){
-        //         usuario = moduloDatos.usuarios[i]
-        //     }
-        // }
-        // let publicaciones = [];
-        // for (let i = 0; i < moduloDatos.productos.length; i++){
-        //     if (moduloDatos.productos[i].idUsuario == id){
-        //         publicaciones.push(moduloDatos.productos[i])
-        //     }
-        // }
-
-       // return res.render('profile', { usuario: objUsuario, publicaciones: publicaciones });
     },
     showEditProfile: function(req, res) {
         if(!req.session.user) {
             return res.redirect("/user/login")
-        } else{
-            // User.findByPk(req.session.user.id)
-            // .then(function (response) {
-            //     return res.render('profile-edit', {usuario: response, errores:[]});
-            // })
-            // .catch(function (error) {
-            //     res.send(error)
-            // })
+        } else if (req.session.user.id != req.params.id) {
+            return res.redirect("/user/profile/" + req.session.user.id)
+        } else {
             return res.render('profile-edit', { errors: [] });
         }
     },
 
-    
     editProfile: function(req, res) {
         let errors = validationResult(req);
-        
-        if(errors.isEmpty()){
+
+        if (errors.isEmpty()) {
             let user = req.body;
 
-            User.update(user)
-            .then(function(response) {
-                return res.redirect("/user/profile" + req.session.user.id)
+            user.contraseña = bcrypt.hashSync(user.contraseña, 10);
+
+            User.update(user, {
+                where: {
+                    id: req.session.user.id
+                }
             })
-            .catch(function(error){
-                errors.push(error)
-                return res.render("profile-edit", { errores: errors })
-            }) 
-        }else{
+                .then(function (response) {
+                    return res.redirect("/user/profile/" + req.session.user.id)
+                })
+                .catch(function (error) {
+                    errors.errors.push(error)
+                    return res.render("profile-edit", { errores: errors.errors })
+                })
+        } else {
             return res.render("profile-edit", { errores: errors.errors })
-        }
-                
+        }       
     },
 
     logout: function (req,res) {

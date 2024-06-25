@@ -48,22 +48,17 @@ const validateLoginForm = [
 
     body('contraseña').notEmpty().withMessage('Debes completar el campo de contraseña')
     .isLength({min: 4}).withMessage('La contraseña debe tener al menos 4 caracteres.')
-    .custom(function (value, {req}) {
+    .custom(function(value, {req}){
         return db.User.findOne({
             where: {
-                email : req.body.usuario
+                email: req.body.usuario
             }
         })
         .then(function(response) {
-            //console.log(response)
-            if(response && !bcrypt.compareSync(value, response.contraseña)){
+            if(!bcrypt.compareSync(value, user.contraseña)){
                 throw new Error('La contraseña es incorrecta')
             }
         })
-        .catch(function(error) {
-            console.log(error)
-        })
-
     }),
 ];
 
@@ -73,10 +68,11 @@ router.get('/login', userController.showLogin);
 router.post('/login', validateLoginForm, userController.login);
 router.get('/register', userController.showRegister);
 router.post('/register', validateRegisterForm, userController.register);
-router.get('/profile/:id?', userController.profile);
 router.get('/editProfile', userController.showEditProfile);
 router.post('/editProfile', userController.editProfile);
 router.post("/logout", userController.logout);
+
+router.get('/profile/:id?', userController.profile);
 
 module.exports = router;
 
