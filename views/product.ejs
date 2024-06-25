@@ -53,9 +53,11 @@
 							<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 						</form>
-						<form class="form" action="/product/eliminar/<%= producto.id %>" method="post">
-							<button type="submit" class="buy-now-button">ELIMINAR PUBLICACIÓN</button>
-						</form>
+							<% if (user.id == producto.usuario_id) { %>
+							<form class="form" action="/product/eliminar/<%= producto.id %>" method="post">
+								<button type="submit" class="buy-now-button">ELIMINAR PUBLICACIÓN</button>
+							</form>
+							<% } %>
 					<% } else { %> 
 						<p class="product-detail-description">Debes estar logueado para comentar.</p>
 					<% } %>
