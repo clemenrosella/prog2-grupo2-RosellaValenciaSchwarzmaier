@@ -25,11 +25,17 @@ const userController = {
                 }
             })
                 .then(function (response) {
-                    req.session.user = response
-                    if (req.body.recordarme){
-                        res.cookie('usuarioId', response.id, { maxAge: 1000 * 60 * 30 })
-                    };
-                    return res.redirect('/user/profile/' + response.id);
+
+                    if (!bcrypt.compareSync(req.body.contraseña, response.contraseña)) {
+                        errors.errors.push("La contraseña es incorrecta")
+                        return res.render('login', { errors: errors.errors })
+                    } else{
+                        req.session.user = response
+                        if (req.body.recordarme){
+                            res.cookie('usuarioId', response.id, { maxAge: 1000 * 60 * 30 })
+                        };
+                        return res.redirect('/user/profile/' + response.id);
+                    }
                 })
                 .catch(function (error) {
                     errors.errors.push(error)
